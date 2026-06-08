@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 data = [[2, 0.01596],
         [4, 0.014236],
@@ -10,12 +11,13 @@ data = [[2, 0.01596],
         [128, 0.0089286]]
 df = pd.DataFrame(data, columns=["Sdim", "L1loss"])
 
+sns.set_theme()
 fig, ax = plt.subplots()
-ax.plot(df["Sdim"], df["L1loss"], marker="o")
-ax.set_xscale("log", base=2)
-ax.set_xlabel("Sdim")
-ax.set_ylabel("L1 loss")
-ax.set_title("L1 Loss vs Sdim")
+sns.lineplot(data=df, x="Sdim", y="L1loss", marker="o", ax=ax)
+# ax.set_xscale("log", base=2)
+ax.set_xlabel("$S^n$")
+ax.set_ylabel("L1 Loss")
+# ax.set_title("L1 Loss vs $S^n$")
 plt.tight_layout()
 plt.savefig("images/L1_Sdim.png", dpi=150)
 
