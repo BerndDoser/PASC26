@@ -1,12 +1,18 @@
+## Structure
+
+- **Hi**erarchical **P**rogressive **S**urvey (HiPS) - The more you zoom in, the more details you see.
+- [HuggingFace](https://huggingface.co/HITS-AIN)
+- The Multimodal Universe
+- Shared Universe Engine (DynaVerse SUE)
+
 ## Agenda
 
 - **Project X**: The Big Picture
 - **PEST**: Data Preprocessing
 - **Spherinator**: The Training
 - **HiPSter**: The Inference
-- **Live demo**: Illustris TNG
-- **Multimodality**: 1D Spectral Data
-- **Flyte** and **StreamFlow**: Workflow Orchestration
+- **Multimodality**
+- **AI Deployment Platform**
 
 ![](images/illustris_latent_sphere_quarter.png){.absolute top=-120 right=-100 width="700" height="700"}
 
@@ -141,23 +147,9 @@ contains over **200 million** blue (BP) and red (RP) spectra as continuous spect
 :::
 
 
-## Workflow Orchestration with Flyte
-
-[Flyte](https://flyte.org/) is a highly scalable **cloud-native** workflow orchestration platform on top of containers and Kubernetes
+## AI Deployment Platform
 
 ![](images/flyte-architecture.svg){fig-align="center"}
-
-
-## Workflow Orchestration with StreamFlow
-
-[StreamFlow](https://streamflow.di.unito.it/) executes **Common Workflow Language (CWL)** using a deployment model that includes containers, Slurm (HPC), and Kubernetes.
-
-![](images/streamflow-model.png){width="40%" fig-align="center"}
-
-::: aside
-Source: [StreamFlow](
-https://streamflow.di.unito.it/documentation/0.2/guide/architecture.html)
-:::
 
 
 ## Summary and Outlook
