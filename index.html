@@ -6,7 +6,7 @@
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-b754b9fd3853d7e56faef54c29c5d52b.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark-de8274a4d1ecc1e6aaeaf6e5564b5074.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="Bernd Doser &amp; Sebastian Trujillo-GomezKai Polsterer, Andreas Fehlner, Fenja Schweder, Romain Chazotte">
@@ -49,7 +49,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-59eea25f73ac4d198524cdbd146509bf.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-f4061d645ca8c2933a93e7a6d8145cf5.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -142,7 +142,7 @@
     }
   </style>
 </head>
-<body class="quarto-light">
+<body class="quarto-dark">
   <div class="reveal">
     <div class="slides">
 
@@ -153,83 +153,67 @@
   <p class="institute" style="color:white;font-size:22px;">Heidelberg Institute for Theoretical Studies (HITS)</p>
   <p class="date" style="color:white;font-size:22px;">June 2026</p>
 </section>
-<section id="structure" class="slide level2">
-<h2>Structure</h2>
-<ul>
-<li><strong>Hi</strong>erarchical <strong>P</strong>rogressive <strong>S</strong>urvey (HiPS) - The more you zoom in, the more details you see.</li>
-<li><a href="https://huggingface.co/HITS-AIN">HuggingFace</a></li>
-<li>The Multimodal Universe</li>
-<li>Shared Universe Engine (DynaVerse SUE)</li>
-</ul>
+<section class="slide level2">
+
+<!-- ## Structure
+
+- PEST
+  - ETL pipeline
+  - [HuggingFace](https://huggingface.co/HITS-AIN)
+
+- Spherinator
+  - Feature space
+    - How many dimensions?
+    - UMAP
+  - Variational Autoencoder (VAE)
+  - Hyper-spherical latent space
+    - Power Spherical distribution
+    
+
+- HiPSter
+  - **Hi**erarchical **P**rogressive **S**urvey (HiPS) - The more you zoom in, the more details you see.
+
+- The Multimodal Universe
+- Shared Universe Engine (DynaVerse SUE) -->
 </section>
 <section id="agenda" class="slide level2">
 <h2>Agenda</h2>
 <ul>
-<li><strong>Project X</strong>: The Big Picture</li>
-<li><strong>PEST</strong>: Data Preprocessing</li>
-<li><strong>Spherinator</strong>: The Training</li>
-<li><strong>HiPSter</strong>: The Inference</li>
-<li><strong>Multimodality</strong></li>
-<li><strong>AI Deployment Platform</strong></li>
+<li>The Data Pipeline</li>
+<li>How to learn the representation?</li>
+<li>The (Hyper-)Spherical Latent Space</li>
+<li>The Shared Universe Engine (DynaVerse SUE)</li>
 </ul>
 <p><img data-src="images/illustris_latent_sphere_quarter.png" class="absolute" style="top: -120px; right: -100px; width: 700px; height: 700px; "></p>
+<!-- ## Associated Materials
+
+![](images/qrcode_github_repo.svg){.absolute top=50 right=0 width=200}
+
+- The presentation and demo notebooks are publicly available at\
+  [github.com/BerndDoser/SPACE_HPC_Visualization_Workshop](https://github.com/BerndDoser/SPACE_HPC_Visualization_Workshop)
+- Related project repositories:
+  - [PEST](https://github.com/HITS-AIN/PEST): Data acquisition and preprocessing
+  - [Spherinator](https://github.com/HITS-AIN/Spherinator): Representation Learning using PyTorch Lightning
+  - [HiPSter](https://github.com/HITS-AIN/HiPSter): Generation of HiPS maps and catalogs
+- User documentation is available at
+  [ReadTheDocs](https://spherinator.readthedocs.io/en/latest/index.html) -->
 </section>
-<section id="associated-materials" class="slide level2">
-<h2>Associated Materials</h2>
-<p><img data-src="images/qrcode_github_repo.svg" class="absolute" style="top: 50px; right: 0px; width: 200px; "></p>
-<ul>
-<li>The presentation and demo notebooks are publicly available at<br>
-<a href="https://github.com/BerndDoser/SPACE_HPC_Visualization_Workshop">github.com/BerndDoser/SPACE_HPC_Visualization_Workshop</a></li>
-<li>Related project repositories:
-<ul>
-<li><a href="https://github.com/HITS-AIN/PEST">PEST</a>: Data acquisition and preprocessing</li>
-<li><a href="https://github.com/HITS-AIN/Spherinator">Spherinator</a>: Representation Learning using PyTorch Lightning</li>
-<li><a href="https://github.com/HITS-AIN/HiPSter">HiPSter</a>: Generation of HiPS maps and catalogs</li>
-</ul></li>
-<li>User documentation is available at <a href="https://spherinator.readthedocs.io/en/latest/index.html">ReadTheDocs</a></li>
-</ul>
-</section>
-<section id="project-x-the-big-picture" class="slide level2">
-<h2>Project X: The Big Picture</h2>
-<p><img data-src="images/projectx_v3_1.png" class="absolute" style="left: 0px; width: 1800px; "></p>
-</section>
-<section id="project-x-the-big-picture-1" class="slide level2">
-<h2>Project X: The Big Picture</h2>
-<p><img data-src="images/projectx_v3_2.png" class="absolute" style="left: 0px; width: 1800px; "></p>
-</section>
-<section id="project-x-the-big-picture-2" class="slide level2">
-<h2>Project X: The Big Picture</h2>
+<section id="the-data-pipeline" class="slide level2">
+<h2>The Data Pipeline</h2>
 <p><img data-src="images/projectx_v3.png" class="absolute" style="left: 0px; width: 1800px; "></p>
 </section>
-<section id="pest-data-preprocessing" class="slide level2">
-<h2>PEST: Data Preprocessing</h2>
-<div class="columns">
-<div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/PEST.png" class="quarto-figure quarto-figure-center" data-background-color="white"></p>
-</figure>
-</div>
-</div><div class="column" style="width:60%;">
-<div style="font-size: 80%;">
+<section id="the-data-pipeline-1" class="slide level2">
+<h2>The Data Pipeline</h2>
 <ul>
 <li><a href="https://github.com/HITS-AIN/PEST">PEST</a> preprocess universal cosmological simulation data into multi-channel images, data cubes, and point clouds</li>
-<li><a href="https://parquet.apache.org/">Apache Parquet</a> stores multi-modal data in a unique way
-<ul>
-<li>Efficient columnar data storage</li>
-<li>Fast access by <a href="https://arrow.apache.org/">Apache Arrow</a></li>
-<li>Interoperable with many frameworks (<strong>PyTorch</strong>, <strong>TensorFlow</strong>) and programming languages (<strong>Python</strong>, <strong>Julia</strong>, <strong>C++</strong>, <strong>Rust</strong>)</li>
-</ul></li>
+<li><a href="https://parquet.apache.org/">Apache Parquet</a> stores multi-modal data in an efficient columnar data storage</li>
 </ul>
-</div>
-</div></div>
 </section>
-<section id="spherinator-the-training" class="slide level2">
-<h2>Spherinator: The Training</h2>
+<section id="representation-learning-with-spherinator" class="slide level2">
+<h2>Representation Learning with Spherinator</h2>
 <ul>
 <li>Representation learning using a <strong>Variational Autoencoder</strong></li>
-<li>Dimensionality reduction to a <strong>(Hyper-)spherical</strong> latent space</li>
-<li>Training with <strong>PyTorch Lightning</strong></li>
+<li>Dimensionality reduction to a <strong>(Hyper-)Spherical Latent Space</strong></li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -240,52 +224,21 @@
 <aside><div>
 <p>Source: <span class="citation" data-cites="Polsterer2024">Polsterer et al. (<a href="#/references" role="doc-biblioref" onclick="">2024</a>)</span>, <span class="citation" data-cites="Doser2025">Doser et al. (<a href="#/references" role="doc-biblioref" onclick="">2025</a>)</span></p>
 </div></aside></section>
+<section id="how-many-dimensions" class="slide level2">
+<h2>How many dimensions?</h2>
+
+<img data-src="images/PCA_feature_analysis.png" class="quarto-figure quarto-figure-center r-stretch" width="800"></section>
 <section id="spherinator-the-power-spherical-distribution" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Spherinator: The Power Spherical Distribution</h2>
 <div class="columns">
 <div class="column" style="width:55%;">
-<p>Normal distribution on the hyper-sphere:</p>
-<p><span class="math display">\[\begin{aligned}
-p_{X}(x; \mu, \kappa) = N_{X}(\kappa, d)^{-1}(1 + \mu^{\top}x)^{\kappa}
-\end{aligned}\]</span></p>
-<p><span class="math inline">\(d\)</span>: Dimension</p>
-<p><span class="math inline">\(\mu\)</span>: Direction</p>
-<p><span class="math inline">\(\kappa\)</span>: Concentration</p>
-<p><span class="math inline">\(N_{X}\)</span>: Normalization factor</p>
+<ul>
+<li>The <strong>Power Spherical distribution</strong> is a generalization of the von Mises-Fisher distribution, allowing for more flexible modeling of data on hyperspheres.</li>
+</ul>
 </div><div class="column" style="width:45%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/power_spherical.png" class="quarto-figure quarto-figure-center" width="600"></p>
-</figure>
-</div>
+<p><img data-src="images/power_spherical.png" class="quarto-figure quarto-figure-center" width="600"> Source: <span class="citation" data-cites="DeCao2020">Cao and Aziz (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span></p>
 </div></div>
-
-<aside><div>
-<p>Source: <span class="citation" data-cites="DeCao2020">Cao and Aziz (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span></p>
-</div></aside></section>
-<section id="spherinator-the-power-spherical-distribution-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Spherinator: The Power Spherical Distribution</h2>
-<div class="columns">
-<div class="column" style="width:55%;">
-<p>Normal distribution on the hyper-sphere:</p>
-<p><span class="math display">\[\begin{aligned}
-p_{X}(x; \mu, \kappa) = N_{X}(\kappa, d)^{-1}(1 + \mu^{\top}x)^{\kappa}
-\end{aligned}\]</span></p>
-<p><span class="math inline">\(d\)</span>: Dimension</p>
-<p><span class="math inline">\(\mu\)</span>: Direction</p>
-<p><span class="math inline">\(\kappa\)</span>: Concentration</p>
-<p><span class="math inline">\(N_{X}\)</span>: Normalization factor</p>
-</div><div class="column" style="width:45%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/power_spherical.png" class="quarto-figure quarto-figure-center" width="600"></p>
-</figure>
-</div>
-</div></div>
-
-<aside><div>
-<p>Source: <span class="citation" data-cites="DeCao2020">Cao and Aziz (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span></p>
-</div></aside></section>
+</section>
 <section id="hipster-the-inference" class="slide level2">
 <h2>HiPSter: The Inference</h2>
 <div class="quarto-figure quarto-figure-center">
@@ -301,13 +254,8 @@ p_{X}(x; \mu, \kappa) = N_{X}(\kappa, d)^{-1}(1 + \mu^{\top}x)^{\kappa}
 <aside><div>
 <p>Source: <span class="citation" data-cites="Fernique_2015">Fernique et al. (<a href="#/references" role="doc-biblioref" onclick="">2015</a>)</span></p>
 </div></aside></section>
-<section>
-<section id="lets-begin-the-demonstration" class="title-slide slide level1 center">
-<h1>Let’s begin the demonstration!</h1>
-
-</section>
-<section id="multimodality-1d-spectra" class="slide level2">
-<h2>Multimodality: 1D Spectra</h2>
+<section id="gaia-dr3-xp-spectra" class="slide level2">
+<h2>Gaia DR3 XP Spectra</h2>
 <div class="quarto-layout-panel" data-layout="[1,1]">
 <div class="quarto-layout-row">
 <div class="n1 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -328,18 +276,9 @@ p_{X}(x; \mu, \kappa) = N_{X}(\kappa, d)^{-1}(1 + \mu^{\top}x)^{\kappa}
 <section id="summary-and-outlook" class="slide level2">
 <h2>Summary and Outlook</h2>
 <ul>
-<li>Modular and flexible data workflow (Project X)</li>
-<li>Uniform interconnectivity
-<ul>
-<li><strong>Parquet</strong> for data storage</li>
-<li><strong>ONNX</strong> for model exchange</li>
-</ul></li>
-<li>Workflow Orchestration (<a href="https://bernddoser.github.io/ML-workflow-orchestration/">ML Workflow Seminar</a>)
-<ul>
-<li><strong>Flyte</strong> for cloud-native workflows</li>
-<li><strong>StreamFlow</strong> for HPC workflows</li>
-</ul></li>
-<li>Prototype for <strong>Illustris TNG</strong> and <strong>Gaia DR3 XP</strong> is available at <a href="https://space.h-its.org">space.h-its.org</a></li>
+<li><p>The <strong>(Hyper-)Spherical latent space</strong> provides a powerful tool for exploring and visualizing cosmological data.</p></li>
+<li><p>The <strong>Shared Universe Engine (DynaVerse SUE)</strong> will facilitate new insights into the structure and evolution of the universe.</p></li>
+<li><p>First results @ <a href="https://space.h-its.org">space.h-its.org</a></p></li>
 </ul>
 </section>
 <section id="acknowledgement-disclaimer" class="slide level2">
@@ -363,10 +302,10 @@ Fernique, P., M. G. Allen, T. Boch, A. Oberto, F-X. Pineau, D. Durand, C. Bot, e
 Polsterer, Kai L., Bernd Doser, Andreas Fehlner, and Sebastian Trujillo-Gomez. 2024. <span>“Spherinator and HiPSter: Representation Learning for Unbiased Knowledge Discovery from Simulations.”</span> <em>Astronomical Data Analysis Software and Systems XXXIII</em>. <a href="https://doi.org/10.48550/arXiv.2406.03810">https://doi.org/10.48550/arXiv.2406.03810</a>.
 </div>
 </div>
-</section></section>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
-<p><img src="images/HITS_RGB_eng.jpg" class="slide-logo"></p>
+<p><img src="images/HITS-Logo-negativ.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p>Spherinator &amp; HiPSter (B. Doser &amp; S. Trujillo-Gomez)</p>
 </div>

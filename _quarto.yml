@@ -12,7 +12,9 @@ title-slide-attributes:
   data-background-size: cover
 format:
   revealjs:
-    logo: images/HITS_RGB_eng.jpg
+    logo: images/HITS-Logo-negativ.png
+    logo-width: 150
+    logo-position: top-right
     footer: "Spherinator & HiPSter (B. Doser & S. Trujillo-Gomez)"
     slide-number: true
     highlight-style: a11y
@@ -23,7 +25,7 @@ format:
     menu: false
     show-slide-number: print
 
-    theme: beige
+    theme: custom.scss
     auto-animate: true
 
     include-after-body: clean_title_page.html

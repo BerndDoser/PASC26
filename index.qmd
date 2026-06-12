@@ -1,4 +1,4 @@
-## Structure
+<!-- ## Structure
 
 - PEST
   - ETL pipeline
@@ -17,22 +17,20 @@
   - **Hi**erarchical **P**rogressive **S**urvey (HiPS) - The more you zoom in, the more details you see.
 
 - The Multimodal Universe
-- Shared Universe Engine (DynaVerse SUE)
+- Shared Universe Engine (DynaVerse SUE) -->
 
 
 ## Agenda
 
-- **Project X**: The Big Picture
-- **PEST**: Data Preprocessing
-- **Spherinator**: The Training
-- **HiPSter**: The Inference
-- **Multimodality**
-- **AI Deployment Platform**
+- The Data Pipeline
+- How to learn the representation?
+- The (Hyper-)Spherical Latent Space
+- The Shared Universe Engine (DynaVerse SUE)
 
 ![](images/illustris_latent_sphere_quarter.png){.absolute top=-120 right=-100 width="700" height="700"}
 
 
-## Associated Materials
+<!-- ## Associated Materials
 
 ![](images/qrcode_github_repo.svg){.absolute top=50 right=0 width=200}
 
@@ -43,51 +41,25 @@
   - [Spherinator](https://github.com/HITS-AIN/Spherinator): Representation Learning using PyTorch Lightning
   - [HiPSter](https://github.com/HITS-AIN/HiPSter): Generation of HiPS maps and catalogs
 - User documentation is available at
-  [ReadTheDocs](https://spherinator.readthedocs.io/en/latest/index.html)
+  [ReadTheDocs](https://spherinator.readthedocs.io/en/latest/index.html) -->
 
 
-## Project X: The Big Picture
-
-![](images/projectx_v3_1.png){.absolute left=0 width=1800}
-
-
-## Project X: The Big Picture
-
-![](images/projectx_v3_2.png){.absolute left=0 width=1800}
-
-
-## Project X: The Big Picture
+## The Data Pipeline
 
 ![](images/projectx_v3.png){.absolute left=0 width=1800}
 
 
-## PEST: Data Preprocessing
-
-:::: {.columns}
-::: {.column width="40%"}
-
-![](images/PEST.png){fig-align="center" background-color="white"}
-
-:::
-::: {.column width="60%"}
-::: {style="font-size: 80%;"}
+## The Data Pipeline
 
 - [PEST](https://github.com/HITS-AIN/PEST) preprocess universal cosmological simulation data into multi-channel images, data cubes, and point clouds
-- [Apache Parquet](https://parquet.apache.org/) stores multi-modal data in a unique way
-  - Efficient columnar data storage
-  - Fast access by [Apache Arrow](https://arrow.apache.org/)
-  - Interoperable with many frameworks (**PyTorch**, **TensorFlow**) and programming languages (**Python**, **Julia**, **C++**, **Rust**)
-
-:::
-:::
-::::
+- [Apache Parquet](https://parquet.apache.org/) stores multi-modal data in an efficient columnar data storage
 
 
-## Spherinator: The Training
+
+## Representation Learning with Spherinator
 
 - Representation learning using a **Variational Autoencoder**
-- Dimensionality reduction to a **(Hyper-)spherical** latent space
-- Training with **PyTorch Lightning**
+- Dimensionality reduction to a **(Hyper-)Spherical Latent Space**
 
 ![](images/vae.svg){width="1100" fig-align="center"}
 
@@ -96,36 +68,24 @@ Source: @Polsterer2024, @Doser2025
 :::
 
 
+## How many dimensions?
+
+![](images/PCA_feature_analysis.png){width="800" fig-align="center"}
+
 ## Spherinator: The Power Spherical Distribution {auto-animate="true"}
 
 :::: {.columns}
+
 ::: {.column width="55%"}
-
-Normal distribution on the hyper-sphere:
-
-$$\begin{aligned}
-p_{X}(x; \mu, \kappa) = N_{X}(\kappa, d)^{-1}(1 + \mu^{\top}x)^{\kappa}
-\end{aligned}$$
-
-$d$: Dimension
-
-$\mu$: Direction
-
-$\kappa$: Concentration
-
-$N_{X}$: Normalization factor
+- The **Power Spherical distribution** is a generalization of the von Mises-Fisher distribution, allowing for more flexible modeling of data on hyperspheres.
 :::
 
 ::: {.column width="45%"}
 ![](images/power_spherical.png){width="600" fig-align="center"}
-
+Source: @DeCao2020
 :::
 
 ::::
-
-::: aside
-Source: @DeCao2020
-:::
 
 
 ## HiPSter: The Inference
@@ -167,14 +127,13 @@ contains over **200 million** blue (BP) and red (RP) spectra as continuous spect
 
 ## Summary and Outlook
 
-- Modular and flexible data workflow (Project X)
-- Uniform interconnectivity
-  - **Parquet** for data storage
-  - **ONNX** for model exchange
-- Workflow Orchestration ([ML Workflow Seminar](https://bernddoser.github.io/ML-workflow-orchestration/))
-  - **Flyte** for cloud-native workflows
-  - **StreamFlow** for HPC workflows
-- Prototype for **Illustris TNG** and **Gaia DR3 XP** is available at [space.h-its.org](https://space.h-its.org)
+
+
+- The **(Hyper-)Spherical latent space** provides a powerful tool for exploring and visualizing cosmological data.
+
+- The **Shared Universe Engine (DynaVerse SUE)** will facilitate new insights into the structure and evolution of the universe.
+
+- First results @ [space.h-its.org](https://space.h-its.org)
 
 
 ## Acknowledgement & Disclaimer
