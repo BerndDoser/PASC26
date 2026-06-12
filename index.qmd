@@ -50,6 +50,30 @@ Source: @Polsterer2024, @Doser2025
 
 ![](images/PCA_feature_analysis.png){width="800" fig-align="center"}
 
+## Elbow Method
+
+- The **Elbow Method** is a heuristic used to determine the optimal number of dimensions in a latent space by analyzing the explained variance or reconstruction error as a function of the number of dimensions.
+
+
+```{python}
+#| fig-align: center
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df = pd.read_json("data/illustris_vae_resnet18.json")
+
+sns.set_theme()
+fig, ax = plt.subplots()
+sns.lineplot(data=df, x="sdim", y="l1loss_val_min", marker="o", ax=ax, label="validation")
+sns.lineplot(data=df, x="sdim", y="l1loss_train_min", marker="o", ax=ax, label="training")
+# ax.set_xscale("log", base=2)
+ax.set_xlabel("$S^n$")
+ax.set_ylabel("L1 loss")
+plt.tight_layout()
+plt.show()
+```
+
 
 ## Spherinator: The Power Spherical Distribution {auto-animate="true"}
 

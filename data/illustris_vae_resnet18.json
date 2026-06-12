@@ -1,0 +1,10 @@
+[
+  {"sdim": 2,   "l1loss_val_min": 0.01596,   "l1loss_train_min": 0.015428},
+  {"sdim": 4,   "l1loss_val_min": 0.014236,  "l1loss_train_min": 0.012832},
+  {"sdim": 8,   "l1loss_val_min": 0.013141,  "l1loss_train_min": 0.0098078},
+  {"sdim": 16,  "l1loss_val_min": 0.011649,  "l1loss_train_min": 0.0084853},
+  {"sdim": 32,  "l1loss_val_min": 0.010179,  "l1loss_train_min": 0.0075887},
+  {"sdim": 64,  "l1loss_val_min": 0.0093984, "l1loss_train_min": 0.0071619},
+  {"sdim": 128, "l1loss_val_min": 0.0089286, "l1loss_train_min": 0.006931},
+  {"sdim": 256, "l1loss_val_min": 0.0096211, "l1loss_train_min": 0.0073819}
+]
