@@ -22,16 +22,17 @@
   [ReadTheDocs](https://spherinator.readthedocs.io/en/latest/index.html) -->
 
 
-## The Data Pipeline
+## The Data Pipeline {auto-animate="true"}
 
 ![](images/projectx_v3.png){.absolute left=0 width=1800}
 
 
-## The Data Pipeline
+## The Data Pipeline {auto-animate="true"}
 
 - [PEST](https://github.com/HITS-AIN/PEST) preprocess universal cosmological simulation data into multi-channel images, data cubes, and point clouds
 - [Apache Parquet](https://parquet.apache.org/) stores multi-modal data in an efficient columnar data storage
 
+![](images/projectx_v3.png){width=400}
 
 
 ## Representation Learning with Spherinator
@@ -52,27 +53,55 @@ Source: @Polsterer2024, @Doser2025
 
 ## Elbow Method
 
-- The **Elbow Method** is a heuristic used to determine the optimal number of dimensions in a latent space by analyzing the explained variance or reconstruction error as a function of the number of dimensions.
+::: {style="font-size: 70%;"}
+Determine the optimal number of dimensions in the latent space by analyzing the reconstruction.
+:::
 
 
 ```{python}
 #| fig-align: center
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+import plotly.graph_objects as go
 
 df = pd.read_json("data/illustris_vae_resnet18.json")
 
-sns.set_theme()
-fig, ax = plt.subplots()
-sns.lineplot(data=df, x="sdim", y="l1loss_val_min", marker="o", ax=ax, label="validation")
-sns.lineplot(data=df, x="sdim", y="l1loss_train_min", marker="o", ax=ax, label="training")
-# ax.set_xscale("log", base=2)
-ax.set_xlabel("$S^n$")
-ax.set_ylabel("L1 loss")
-plt.tight_layout()
-plt.show()
+fig = go.Figure()
+
+fig.add_trace(go.Scatter(
+    x=df["sdim"], y=df["l1loss_val_min"],
+    mode="lines+markers",
+    name="Validation",
+    line=dict(color="#0088c2", width=3),
+    marker=dict(size=10),
+))
+
+fig.add_trace(go.Scatter(
+    x=df["sdim"], y=df["l1loss_train_min"],
+    mode="lines+markers",
+    name="Training",
+    line=dict(color="#cee6f5", width=3),
+    marker=dict(size=10),
+))
+
+fig.update_layout(
+    hovermode=False,
+    xaxis_title="S<sup>n</sup>",
+    yaxis_title="L1 loss",
+    paper_bgcolor="rgba(0,0,0,0)",
+    plot_bgcolor="rgba(0,0,0,0)",
+    font=dict(color="#cee6f5", size=16),
+    xaxis=dict(gridcolor="rgba(206,230,245,0.2)", linecolor="rgba(206,230,245,0.4)"),
+    yaxis=dict(gridcolor="rgba(206,230,245,0.2)", linecolor="rgba(206,230,245,0.4)"),
+    legend=dict(bgcolor="rgba(0,0,0,0)"),
+    margin=dict(l=60, r=20, t=20, b=60),
+)
+
+fig.show(config={"displayModeBar": False})
 ```
+
+## Reconstruction Quality
+
+![](images/illustris_S2_alpha.png){width="800" fig-align="center"}
 
 
 ## Spherinator: The Power Spherical Distribution {auto-animate="true"}
