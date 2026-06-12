@@ -7,16 +7,18 @@
 // Override theme settings
 $font-family-sans-serif: "Open Sans", sans-serif !default;
 $body-color: #cee6f5 !default; // HITS cyan 20%
+
 $presentation-heading-font: "Quicksand", sans-serif !default;
 $presentation-heading-color: $body-color !default;
-$presentation-heading-letter-spacing: -0.08em !default;
-$presentation-heading-text-shadow: none !default;
+// $presentation-heading-letter-spacing: -0.08em !default;
+//$presentation-heading-text-shadow: none !default;
+// $presentation-heading-text-transform: uppercase !default; // from settings.scss
+//$presentation-heading-font-weight: normal !default; // from settings.scss
+
 $body-bg: #003063 !default; // HITS dark blue
 $link-color: #0088c2 !default; // HITS cyan 100%
 $selection-bg: #134674 !default;
 
-$presentation-heading-text-transform: uppercase !default; // from settings.scss
-$presentation-heading-font-weight: normal !default; // from settings.scss
 
 $overlayElementBgColor: 0, 0, 0 !default;
 $overlayElementFgColor: 240, 240, 240 !default;
@@ -35,7 +37,15 @@ $code-block-bg: transparent !default;
   line-height: 1.3em;
 }
 
-// Footer color
 .reveal .footer {
   color: #cee6f5;
+  font-size: 0.65em;
+}
+
+.reveal .slide-logo {
+  max-height: 80px !important;
+  position: fixed !important;
+  top: 12px !important;
+  bottom: unset !important;
+  right: 12px !important;
 }

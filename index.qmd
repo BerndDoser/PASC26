@@ -1,25 +1,3 @@
-<!-- ## Structure
-
-- PEST
-  - ETL pipeline
-  - [HuggingFace](https://huggingface.co/HITS-AIN)
-
-- Spherinator
-  - Feature space
-    - How many dimensions?
-    - UMAP
-  - Variational Autoencoder (VAE)
-  - Hyper-spherical latent space
-    - Power Spherical distribution
-    
-
-- HiPSter
-  - **Hi**erarchical **P**rogressive **S**urvey (HiPS) - The more you zoom in, the more details you see.
-
-- The Multimodal Universe
-- Shared Universe Engine (DynaVerse SUE) -->
-
-
 ## Agenda
 
 - The Data Pipeline
@@ -71,6 +49,7 @@ Source: @Polsterer2024, @Doser2025
 ## How many dimensions?
 
 ![](images/PCA_feature_analysis.png){width="800" fig-align="center"}
+
 
 ## Spherinator: The Power Spherical Distribution {auto-animate="true"}
 

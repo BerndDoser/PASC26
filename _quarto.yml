@@ -1,5 +1,5 @@
-title: Representation Learning with Spherinator
-subtitle: Platform for Advanced Scientific Computing (PASC) 2026
+title: From Visualization to Knowledge Discovery
+subtitle: PASC 2026
 # author: |
 #   | Bernd Doser & Sebastian Trujillo-Gomez
 #   | Kai Polsterer, Andreas Fehlner, Fenja Schweder, Romain Chazotte
@@ -13,8 +13,6 @@ title-slide-attributes:
 format:
   revealjs:
     logo: images/HITS-Logo-negativ.png
-    logo-width: 150
-    logo-position: top-right
     footer: "Spherinator & HiPSter (B. Doser & S. Trujillo-Gomez)"
     slide-number: true
     highlight-style: a11y
@@ -25,14 +23,14 @@ format:
     menu: false
     show-slide-number: print
 
-    theme: custom.scss
+    theme: [default, custom.scss]
     auto-animate: true
 
     include-after-body: clean_title_page.html
     include-after: |
       <script type="text/javascript">
         Reveal.on('ready', event => {
-          if (event.indexh === 0) {
+          if (event.indexh === 0 || event.indexh === 1) {
             document.querySelector("div.has-logo > img.slide-logo").style.display = "none";
           }
         });
@@ -40,8 +38,10 @@ format:
           if (event.indexh === 0) {
             Reveal.configure({ slideNumber: null });
             document.querySelector("div.has-logo > img.slide-logo").style.display = "none";
-          }
-          if (event.indexh === 1) { 
+          } else if (event.indexh === 1) {
+            Reveal.configure({ slideNumber: 'c' });
+            document.querySelector("div.has-logo > img.slide-logo").style.display = "none";
+          } else {
             Reveal.configure({ slideNumber: 'c' });
             document.querySelector("div.has-logo > img.slide-logo").style.display = null;
           }
