@@ -22,6 +22,10 @@ format:
       - title-slide.html
     menu: false
     show-slide-number: print
+
+    theme: beige
+    auto-animate: true
+
     include-after-body: clean_title_page.html
     include-after: |
       <script type="text/javascript">

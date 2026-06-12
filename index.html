@@ -49,7 +49,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-59eea25f73ac4d198524cdbd146509bf.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -240,8 +240,31 @@
 <aside><div>
 <p>Source: <span class="citation" data-cites="Polsterer2024">Polsterer et al. (<a href="#/references" role="doc-biblioref" onclick="">2024</a>)</span>, <span class="citation" data-cites="Doser2025">Doser et al. (<a href="#/references" role="doc-biblioref" onclick="">2025</a>)</span></p>
 </div></aside></section>
-<section id="spherinator-the-power-spherical-distribution" class="slide level2">
-<h2>Spherinator: The Power Spherical Distribution</h2>
+<section id="spherinator-the-power-spherical-distribution" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Spherinator: The Power Spherical Distribution</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>Normal distribution on the hyper-sphere:</p>
+<p><span class="math display">\[\begin{aligned}
+p_{X}(x; \mu, \kappa) = N_{X}(\kappa, d)^{-1}(1 + \mu^{\top}x)^{\kappa}
+\end{aligned}\]</span></p>
+<p><span class="math inline">\(d\)</span>: Dimension</p>
+<p><span class="math inline">\(\mu\)</span>: Direction</p>
+<p><span class="math inline">\(\kappa\)</span>: Concentration</p>
+<p><span class="math inline">\(N_{X}\)</span>: Normalization factor</p>
+</div><div class="column" style="width:45%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/power_spherical.png" class="quarto-figure quarto-figure-center" width="600"></p>
+</figure>
+</div>
+</div></div>
+
+<aside><div>
+<p>Source: <span class="citation" data-cites="DeCao2020">Cao and Aziz (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span></p>
+</div></aside></section>
+<section id="spherinator-the-power-spherical-distribution-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Spherinator: The Power Spherical Distribution</h2>
 <div class="columns">
 <div class="column" style="width:55%;">
 <p>Normal distribution on the hyper-sphere:</p>
@@ -556,6 +579,33 @@ Polsterer, Kai L., Bernd Doser, Andreas Fehlner, and Sebastian Trujillo-Gomez. 2
           RevealZoom
         ]
       });
+    </script>
+    <style>
+      .hide {
+        display: none !important;
+      }
+    </style>
+
+
+    <script>
+      function remove() {
+        let footer = document.querySelector('div.footer');
+        let slideNo = document.querySelector('div.slide-number');
+        slideNo.classList.add('hide');
+        footer.classList.add('hide');
+      
+        Reveal.on('slidechanged', event => {  
+          if(Reveal.isFirstSlide()) {
+            slideNo.classList.add('hide');
+            footer.classList.add('hide');
+          } else {
+            slideNo.classList.remove('hide');
+            footer.classList.remove('hide');
+          }
+        });
+      }
+      
+      window.onload = remove();
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {

@@ -1,9 +1,24 @@
 ## Structure
 
-- **Hi**erarchical **P**rogressive **S**urvey (HiPS) - The more you zoom in, the more details you see.
-- [HuggingFace](https://huggingface.co/HITS-AIN)
+- PEST
+  - ETL pipeline
+  - [HuggingFace](https://huggingface.co/HITS-AIN)
+
+- Spherinator
+  - Feature space
+    - How many dimensions?
+    - UMAP
+  - Variational Autoencoder (VAE)
+  - Hyper-spherical latent space
+    - Power Spherical distribution
+    
+
+- HiPSter
+  - **Hi**erarchical **P**rogressive **S**urvey (HiPS) - The more you zoom in, the more details you see.
+
 - The Multimodal Universe
 - Shared Universe Engine (DynaVerse SUE)
+
 
 ## Agenda
 
@@ -81,7 +96,7 @@ Source: @Polsterer2024, @Doser2025
 :::
 
 
-## Spherinator: The Power Spherical Distribution
+## Spherinator: The Power Spherical Distribution {auto-animate="true"}
 
 :::: {.columns}
 ::: {.column width="55%"}
@@ -124,10 +139,8 @@ Source: @DeCao2020
 Source: @Fernique_2015
 :::
 
-# Let's begin the demonstration!
 
-
-## Multimodality: 1D Spectra
+## Gaia DR3 XP Spectra
 
 ::: {layout='[1,1]'}
 ::: n1
