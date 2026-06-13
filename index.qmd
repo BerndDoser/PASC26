@@ -51,7 +51,8 @@ Source: @Polsterer2024, @Doser2025
 
 ![](images/PCA_feature_analysis.png){width="800" fig-align="center"}
 
-## Elbow Method
+
+## How many dimensions?
 
 ::: {style="font-size: 70%;"}
 Determine the optimal number of dimensions in the latent space by analyzing the reconstruction.
@@ -99,12 +100,13 @@ fig.update_layout(
 fig.show(config={"displayModeBar": False})
 ```
 
+
 ## Reconstruction Quality
 
 ![](images/illustris_S2_alpha.png){width="800" fig-align="center"}
 
 
-## Spherinator: The Power Spherical Distribution {auto-animate="true"}
+## The Power Spherical Distribution {auto-animate="true"}
 
 :::: {.columns}
 
@@ -114,7 +116,7 @@ fig.show(config={"displayModeBar": False})
 
 ::: {.column width="45%"}
 ![](images/power_spherical.png){width="600" fig-align="center"}
-Source: @DeCao2020
+[[@DeCao2020]]{style="font-size: 50%;"}
 :::
 
 ::::
@@ -127,29 +129,30 @@ Source: @DeCao2020
 - The **HEALPix framework** is used to generate a **Hierarchical Progressive Survey (HiPS)** for the corresponding spherical latent space positions.
 - [Aladin-Lite](https://github.com/cds-astro/aladin-lite) is designed to visualize the HiPS representation.
 
-::: aside
-Source: @Fernique_2015
-:::
+[[@Fernique_2015]]{style="font-size: 50%;"}
 
 
-## Gaia DR3 XP Spectra
+## Gaia Spectra Explorer {auto-animate="true"}
 
-::: {layout='[1,1]'}
-::: n1
+<!-- [Gaia DR3 XP](http://cdn.gea.esac.esa.int/Gaia/gdr3/) -->
+
 ::: {style="font-size: 80%;"}
-[Gaia DR3 XP](http://cdn.gea.esac.esa.int/Gaia/gdr3/) 
-contains over **200 million** blue (BP) and red (RP) spectra as continuous spectra with 55 parameters per spectrum.
-![](images/calibrated_spectrum_plot.png){width="600"}
+- Largest most uniform all-sky spectrophotometric survey (over 220 million sources)
+- Low-resolution spectra reveal temperature and chemical composition
+:::
+
+![](images/gaia_explorer.png){fig-align="center"}
+
+::: {style="font-size: 50%;"}
+@Doser2026
+:::
 
 
-:::
-:::
-::: n2
+## Gaia Spectra Explorer {auto-animate="true"}
+
 ```{=html}
 <iframe width="600" height="600" src="https://space.h-its.org/Gaia/" title="Webpage example"></iframe>
 ```
-:::
-:::
 
 
 ## AI Deployment Platform
@@ -159,13 +162,11 @@ contains over **200 million** blue (BP) and red (RP) spectra as continuous spect
 
 ## Summary and Outlook
 
-
-
 - The **(Hyper-)Spherical latent space** provides a powerful tool for exploring and visualizing cosmological data.
 
-- The **Shared Universe Engine (DynaVerse SUE)** will facilitate new insights into the structure and evolution of the universe.
+- The **Shared Universe Engine (Dynaverse SUE)** will facilitate new insights into the structure and evolution of the universe.
 
-- First results @ [space.h-its.org](https://space.h-its.org)
+- First results [space.h-its.org](https://space.h-its.org)
 
 
 ## Acknowledgement & Disclaimer
