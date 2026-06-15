@@ -21,6 +21,14 @@
 - User documentation is available at
   [ReadTheDocs](https://spherinator.readthedocs.io/en/latest/index.html) -->
 
+## Introduction
+
+- The amount of astronomical data is growing exponentially
+  - Exascale cosmological simulations produce petabytes of data
+  - Surveys (e.g. Euclid, LSST) are generating terabytes of data **daily**
+
+- Machine learning methods to explore and understand this data are needed
+
 
 ## The Data Pipeline {auto-animate="true"}
 
@@ -35,15 +43,15 @@
 ![](images/projectx_v3.png){width=400}
 
 
-## Representation Learning with Spherinator
+## Spherinator ![](images/spherinator_logo.png){width=60}
 
 - Representation learning using a **Variational Autoencoder**
 - Dimensionality reduction to a **(Hyper-)Spherical Latent Space**
 
 ![](images/vae.svg){width="1100" fig-align="center"}
 
-::: aside
-Source: @Polsterer2024, @Doser2025
+::: {style="font-size: 50%;"}
+@Polsterer2024, @Doser2026
 :::
 
 
