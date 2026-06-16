@@ -8,19 +8,6 @@
 ![](images/illustris_latent_sphere_quarter.png){.absolute top=-120 right=-100 width="700" height="700"}
 
 
-<!-- ## Associated Materials
-
-![](images/qrcode_github_repo.svg){.absolute top=50 right=0 width=200}
-
-- The presentation and demo notebooks are publicly available at\
-  [github.com/BerndDoser/SPACE_HPC_Visualization_Workshop](https://github.com/BerndDoser/SPACE_HPC_Visualization_Workshop)
-- Related project repositories:
-  - [PEST](https://github.com/HITS-AIN/PEST): Data acquisition and preprocessing
-  - [Spherinator](https://github.com/HITS-AIN/Spherinator): Representation Learning using PyTorch Lightning
-  - [HiPSter](https://github.com/HITS-AIN/HiPSter): Generation of HiPS maps and catalogs
-- User documentation is available at
-  [ReadTheDocs](https://spherinator.readthedocs.io/en/latest/index.html) -->
-
 ## Introduction
 
 - The amount of astronomical data is growing exponentially
@@ -183,3 +170,15 @@ fig.show(config={"displayModeBar": False})
 
 
 ## References
+
+## Associated Materials
+
+![](images/qrcode_github_repo.svg){.absolute top=50 right=0 width=200}
+
+- The presentation and demo notebooks are publicly available at\
+  [github.com/BerndDoser/SPACE_HPC_Visualization_Workshop](https://github.com/BerndDoser/SPACE_HPC_Visualization_Workshop)
+- Project repositories:
+  - [PEST](https://github.com/HITS-AIN/PEST): Data acquisition and preprocessing
+  - [Spherinator](https://github.com/HITS-AIN/Spherinator): Representation Learning
+  - [HiPSter](https://github.com/HITS-AIN/HiPSter): Generation of HiPS maps and catalogs
+- User documentation [ReadTheDocs](https://spherinator.readthedocs.io/en/latest/index.html)
