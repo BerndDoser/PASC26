@@ -6,7 +6,7 @@
 - Interactive Visualization (HiPSter)
 - The Shared Universe Engine (DynaVerse SUE)
 
-![](images/illustris_latent_sphere_quarter.png){.absolute top=-120 right=-100 width="500" height="500"}
+![](images/illustris_latent_sphere_quarter.png){.absolute top=-120 right=-120 width="500" height="500"}
 
 
 ## Introduction
@@ -16,8 +16,8 @@
   - Surveys (e.g. Euclid, LSST) are generating terabytes of data **daily**
 
 - Machine learning methods to explore and understand this data are needed
-- **Our approach:** modular open-source tools for unbiased, self-supervised knowledge discovery\
-  [PEST](https://github.com/HITS-AIN/PEST) → [Spherinator](https://github.com/HITS-AIN/Spherinator) → [HiPSter](https://github.com/HITS-AIN/HiPSter) → DynaVerse SUE
+- **Our approach:** Modular open-source tools for self-supervised knowledge discovery\
+  [PEST](https://github.com/HITS-AIN/PEST) $\rightarrow$ [Spherinator](https://github.com/HITS-AIN/Spherinator) $\rightarrow$ [HiPSter](https://github.com/HITS-AIN/HiPSter) $\rightarrow$ Shared Universe Engine
 
 
 ## The Data Pipeline {auto-animate="true"}
@@ -39,7 +39,7 @@
 - Dimensionality reduction to a **(Hyper-)Spherical Latent Space**
 - Completely **self-supervised** — no labels required
 
-![](images/vae.svg){width="1100" fig-align="center"}
+![](images/vae.svg){width="900" fig-align="center"}
 
 ::: {style="font-size: 50%;"}
 @Polsterer2024, @Doser2026
@@ -217,15 +217,14 @@ TODO: add S^128
 
 ## Associated Materials
 
-![](images/qrcode_github_repo.svg){.absolute top=50 right=0 width=200}
+<!-- ![](images/qrcode_github_repo.svg){.absolute top=50 right=0 width=200} -->
 
-- The presentation and demo notebooks are publicly available at\
-  [github.com/BerndDoser/SPACE_HPC_Visualization_Workshop](https://github.com/BerndDoser/SPACE_HPC_Visualization_Workshop)
-- Project repositories:
+- Repositories:
   - [PEST](https://github.com/HITS-AIN/PEST): Data acquisition and preprocessing
-  - [Spherinator](https://github.com/HITS-AIN/Spherinator): Representation Learning
+  - [Spherinator](https://github.com/HITS-AIN/Spherinator): Representation learning
   - [HiPSter](https://github.com/HITS-AIN/HiPSter): Generation of HiPS maps and catalogs
 - User documentation: [ReadTheDocs](https://spherinator.readthedocs.io/en/latest/index.html)
+- Tutorials: [SPACE HPC Visualization Workshop](https://github.com/BerndDoser/SPACE_HPC_Visualization_Workshop)
 
 
 ## References
