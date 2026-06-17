@@ -1,11 +1,12 @@
 ## Agenda
 
-- The Data Pipeline
-- How to learn the representation?
+- The Data Pipeline (PEST)
+- How to Learn the Representation? (Spherinator)
 - The (Hyper-)Spherical Latent Space
+- Interactive Visualization (HiPSter)
 - The Shared Universe Engine (DynaVerse SUE)
 
-![](images/illustris_latent_sphere_quarter.png){.absolute top=-120 right=-100 width="700" height="700"}
+![](images/illustris_latent_sphere_quarter.png){.absolute top=-120 right=-100 width="500" height="500"}
 
 
 ## Introduction
@@ -15,6 +16,8 @@
   - Surveys (e.g. Euclid, LSST) are generating terabytes of data **daily**
 
 - Machine learning methods to explore and understand this data are needed
+- **Our approach:** modular open-source tools for unbiased, self-supervised knowledge discovery\
+  [PEST](https://github.com/HITS-AIN/PEST) → [Spherinator](https://github.com/HITS-AIN/Spherinator) → [HiPSter](https://github.com/HITS-AIN/HiPSter) → DynaVerse SUE
 
 
 ## The Data Pipeline {auto-animate="true"}
@@ -34,6 +37,7 @@
 
 - Representation learning using a **Variational Autoencoder**
 - Dimensionality reduction to a **(Hyper-)Spherical Latent Space**
+- Completely **self-supervised** — no labels required
 
 ![](images/vae.svg){width="1100" fig-align="center"}
 
@@ -44,7 +48,11 @@
 
 ## How many dimensions?
 
-![](images/PCA_feature_analysis.png){width="800" fig-align="center"}
+::: {style="font-size: 70%;"}
+**PCA analysis** of the bottleneck feature space: eigenvalue decay reveals the intrinsic dimensionality of the data.
+:::
+
+![](images/PCA_feature_analysis.png){width="700" fig-align="center"}
 
 
 ## How many dimensions?
@@ -98,7 +106,13 @@ fig.show(config={"displayModeBar": False})
 
 ## Reconstruction Quality
 
-![](images/illustris_S2_alpha.png){width="800" fig-align="center"}
+::: {style="font-size: 70%;"}
+Galaxies encoded onto **S²** are faithfully reconstructed — similar morphologies cluster together on the sphere.
+:::
+
+![](images/illustris_S2_alpha.png){width="700" fig-align="center"}
+
+TODO: add S^128
 
 
 ## The Power Spherical Distribution {auto-animate="true"}
@@ -114,6 +128,23 @@ fig.show(config={"displayModeBar": False})
 [[@DeCao2020]]{style="font-size: 50%;"}
 :::
 
+::::
+
+
+## HiPSter
+
+:::: {.columns}
+::: {.column width="55%"}
+- Takes the **spherical latent positions** from Spherinator
+- Generates a **HiPS** (**Hi**erarchical **P**rogressive **S**urvey) map
+- Enables **progressive zoom** — more detail as you zoom in
+- Works with any standard HiPS viewer (Aladin, Jasmin, ...)
+
+[github.com/HITS-AIN/HiPSter](https://github.com/HITS-AIN/HiPSter)
+:::
+::: {.column width="45%"}
+![](images/P404_f2.png){width="480" fig-align="center"}
+:::
 ::::
 
 
@@ -152,24 +183,37 @@ fig.show(config={"displayModeBar": False})
 
 ## AI Deployment Platform
 
-![](images/flyte-architecture.svg){fig-align="center"}
+::: {style="font-size: 70%;"}
+[Flyte](https://flyte.org/) orchestrates the full **PEST → Spherinator → HiPSter** workflow — reproducible, scalable pipelines on HPC and cloud infrastructure.
+:::
+
+![](images/flyte-architecture.svg){fig-align="center" width="900"}
+
+
+## The Shared Universe Engine (DynaVerse SUE)
+
+![](images/dynaverse.png){fig-align="center" width="300"}
+
+::: {style="font-size: 70%;"}
+- Cross-dataset comparison between simulations and observations.
+:::
+
 
 
 ## Summary and Outlook
 
-- The **(Hyper-)Spherical latent space** provides a powerful tool for exploring and visualizing cosmological data.
+- **PEST** — ETL pipeline for cosmological simulations (AREPO, ChaNGa, Gadget, RAMSES) and surveys
+- **Spherinator** — self-supervised VAE with (hyper-)spherical latent space for unbiased representation learning
+- **HiPSter** — scalable interactive visualization via progressive HiPS maps on the sphere
+- **DynaVerse SUE** — unified platform connecting data
 
-- The **Shared Universe Engine (Dynaverse SUE)** will facilitate new insights into the structure and evolution of the universe.
-
-- First results [space.h-its.org](https://space.h-its.org)
+- First results available at [space.h-its.org](https://space.h-its.org)
 
 
 ## Acknowledgement & Disclaimer
 
 ![](images/SPACE_acknowledgement_cutout.png){width=1300}
 
-
-## References
 
 ## Associated Materials
 
@@ -181,4 +225,7 @@ fig.show(config={"displayModeBar": False})
   - [PEST](https://github.com/HITS-AIN/PEST): Data acquisition and preprocessing
   - [Spherinator](https://github.com/HITS-AIN/Spherinator): Representation Learning
   - [HiPSter](https://github.com/HITS-AIN/HiPSter): Generation of HiPS maps and catalogs
-- User documentation [ReadTheDocs](https://spherinator.readthedocs.io/en/latest/index.html)
+- User documentation: [ReadTheDocs](https://spherinator.readthedocs.io/en/latest/index.html)
+
+
+## References

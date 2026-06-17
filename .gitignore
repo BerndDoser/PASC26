@@ -7,5 +7,5 @@ __pycache__/
 build/
 dist/
 index_files/
-index.quarto_ipynb_1
+index.quarto_ipynb_*
 wheels/
