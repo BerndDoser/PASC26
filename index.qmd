@@ -33,7 +33,8 @@
 ![](images/projectx_v3.png){width=400}
 
 
-## Spherinator ![](images/spherinator_logo.png){width=60}
+## Spherinator
+<!-- ![](images/spherinator_logo.png){width=60} -->
 
 - Representation learning using a **Variational Autoencoder**
 - Dimensionality reduction to a **(Hyper-)Spherical Latent Space**
@@ -104,15 +105,49 @@ fig.show(config={"displayModeBar": False})
 ```
 
 
-## Reconstruction Quality
+## Reconstruction Quality {auto-animate="true" style="font-size: 50%;"}
 
-::: {style="font-size: 70%;"}
-Galaxies encoded onto **S²** are faithfully reconstructed — similar morphologies cluster together on the sphere.
+Original IllustrisTNG SKIRT SDSS images
+
+![](images/illustris_original.png){width="1000" fig-align="center"}
+
+ResNet-18 autoencoder, 512 features: Sufficient reconstruction
+
+![](images/illustris_recon_ae_512.png){width="1000" fig-align="center"}
+
+
+## Reconstruction Quality {auto-animate="true" style="font-size: 50%;"}
+
+Original IllustrisTNG SKIRT SDSS images
+
+![](images/illustris_original.png){width="1000" fig-align="center"}
+
+ResNet-18 VAE-S${^2}$: Details are lost, but the overall structure is preserved
+
+![](images/illustris_recon_vae_S2.png){width="1000" fig-align="center"}
+
+ResNet-18 VAE-S$^{128}$: Details are present, but blurry
+
+![](images/illustris_recon_vae_S128.png){width="1000" fig-align="center"}
+
+
+
+## UMAP vs. Spherinator
+
+:::: {.columns}
+
+::: {.column width="55%"}
+![](images/illustris_umap.png){width="700" fig-align="center"}
 :::
 
-![](images/illustris_S2_alpha.png){width="700" fig-align="center"}
+::: {.column width="45%"}
 
-TODO: add S^128
+- UMAP is a popular dimensionality reduction technique, but it can distort the global structure of the data.
+- Spherinator preserves the global geometry of the data on a hypersphere, leading to more meaningful representations.
+:::
+
+::::
+
 
 
 ## The Power Spherical Distribution {auto-animate="true"}
@@ -138,7 +173,7 @@ TODO: add S^128
 - Takes the **spherical latent positions** from Spherinator
 - Generates a **HiPS** (**Hi**erarchical **P**rogressive **S**urvey) map
 - Enables **progressive zoom** — more detail as you zoom in
-- Works with any standard HiPS viewer (Aladin, Jasmin, ...)
+- Works with any standard HiPS viewer (Aladin, Aladin-Lite)
 
 [github.com/HITS-AIN/HiPSter](https://github.com/HITS-AIN/HiPSter)
 :::
@@ -181,22 +216,22 @@ TODO: add S^128
 ```
 
 
-## AI Deployment Platform
+<!-- ## Deployment Platform
 
 ::: {style="font-size: 70%;"}
 [Flyte](https://flyte.org/) orchestrates the full **PEST → Spherinator → HiPSter** workflow — reproducible, scalable pipelines on HPC and cloud infrastructure.
 :::
 
-![](images/flyte-architecture.svg){fig-align="center" width="900"}
+![](images/flyte-architecture.svg){fig-align="center" width="900"} -->
 
 
-## The Shared Universe Engine (DynaVerse SUE)
+<!-- ## The Shared Universe Engine (DynaVerse SUE)
 
 ![](images/dynaverse.png){fig-align="center" width="300"}
 
 ::: {style="font-size: 70%;"}
 - Cross-dataset comparison between simulations and observations.
-:::
+::: -->
 
 
 

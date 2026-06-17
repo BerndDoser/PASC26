@@ -49,7 +49,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-19996c7f25d94788b7c0505e445aa3ef.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-d22141376128c3694cfdb9b8a5fd57fe.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -199,18 +199,15 @@
 
 <img data-src="images/projectx_v3.png" width="400" class="r-stretch"></section>
 <section id="spherinator" class="slide level2">
-<h2>Spherinator <img data-src="images/spherinator_logo.png" width="60"></h2>
+<h2>Spherinator</h2>
+<!-- ![](images/spherinator_logo.png){width=60} -->
 <ul>
 <li>Representation learning using a <strong>Variational Autoencoder</strong></li>
 <li>Dimensionality reduction to a <strong>(Hyper-)Spherical Latent Space</strong></li>
 <li>Completely <strong>self-supervised</strong> — no labels required</li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/vae.svg" class="quarto-figure quarto-figure-center" width="900"></p>
-</figure>
-</div>
-<div style="font-size: 50%;">
+
+<img data-src="images/vae.svg" class="quarto-figure quarto-figure-center r-stretch" width="900"><div style="font-size: 50%;">
 <p><span class="citation" data-cites="Polsterer2024">Polsterer et al. (<a href="#/references" role="doc-biblioref" onclick="">2024</a>)</span>, <span class="citation" data-cites="Doser2026">Doser, Polsterer, and Trujillo-Gomez (<a href="#/references" role="doc-biblioref" onclick="">2026</a>)</span></p>
 </div>
 </section>
@@ -226,12 +223,12 @@
 <div style="font-size: 70%;">
 <p>Determine the optimal number of dimensions in the latent space by analyzing the reconstruction.</p>
 </div>
-<div id="1dec8eba" class="cell" data-execution_count="1">
+<div id="1997a079" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div style="height:525px; width:100%;">            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script>if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.6.0.min.js" integrity="sha256-QaOVwtVY0T02VaHrr6pnoHLCwayMJp4O5n4YyaE3rJk=" crossorigin="anonymous"></script>                <div id="0e992a3b-d55f-44b4-998a-dcf33924e13c" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("0e992a3b-d55f-44b4-998a-dcf33924e13c")) {                    Plotly.newPlot(                        "0e992a3b-d55f-44b4-998a-dcf33924e13c",                        [{"line":{"color":"#0088c2","width":3},"marker":{"size":10},"mode":"lines+markers","name":"Validation","x":{"dtype":"i2","bdata":"AgAEAAgAEAAgAEAAgAAAAQ=="},"y":{"dtype":"f8","bdata":"SDgteNFXkD8wJ2iTwyeNP9jV5Cmr6Yo\u002fdLM\u002fUG7bhz8jDtlAutiEP2\u002frE+V3P4M\u002fGxb+ZyhJgj8j988uOrSDPw=="},"type":"scatter"},{"line":{"color":"#cee6f5","width":3},"marker":{"size":10},"mode":"lines+markers","name":"Training","x":{"dtype":"i2","bdata":"AgAEAAgAEAAgAEAAgAAAAQ=="},"y":{"dtype":"f8","bdata":"AaCKG7eYjz8a+bziqUeKPy0296EcFoQ\u002fb1f5r71ggT97QhslVBV\u002fP8GAb+TLVX0\u002f6NhBJa5jfD9DRlGxezx+Pw=="},"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"font":{"color":"#cee6f5","size":16},"xaxis":{"title":{"text":"S\u003csup\u003en\u003c\u002fsup\u003e"},"gridcolor":"rgba(206,230,245,0.2)","linecolor":"rgba(206,230,245,0.4)"},"yaxis":{"title":{"text":"L1 loss"},"gridcolor":"rgba(206,230,245,0.2)","linecolor":"rgba(206,230,245,0.4)"},"legend":{"bgcolor":"rgba(0,0,0,0)"},"margin":{"l":60,"r":20,"t":20,"b":60},"hovermode":false,"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)"},                        {"displayModeBar": false, "responsive": true}                    ).then(function(){
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.6.0.min.js" integrity="sha256-QaOVwtVY0T02VaHrr6pnoHLCwayMJp4O5n4YyaE3rJk=" crossorigin="anonymous"></script>                <div id="6c734d45-2399-403c-8529-971618d76090" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("6c734d45-2399-403c-8529-971618d76090")) {                    Plotly.newPlot(                        "6c734d45-2399-403c-8529-971618d76090",                        [{"line":{"color":"#0088c2","width":3},"marker":{"size":10},"mode":"lines+markers","name":"Validation","x":{"dtype":"i2","bdata":"AgAEAAgAEAAgAEAAgAAAAQ=="},"y":{"dtype":"f8","bdata":"SDgteNFXkD8wJ2iTwyeNP9jV5Cmr6Yo\u002fdLM\u002fUG7bhz8jDtlAutiEP2\u002frE+V3P4M\u002fGxb+ZyhJgj8j988uOrSDPw=="},"type":"scatter"},{"line":{"color":"#cee6f5","width":3},"marker":{"size":10},"mode":"lines+markers","name":"Training","x":{"dtype":"i2","bdata":"AgAEAAgAEAAgAEAAgAAAAQ=="},"y":{"dtype":"f8","bdata":"AaCKG7eYjz8a+bziqUeKPy0296EcFoQ\u002fb1f5r71ggT97QhslVBV\u002fP8GAb+TLVX0\u002f6NhBJa5jfD9DRlGxezx+Pw=="},"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"font":{"color":"#cee6f5","size":16},"xaxis":{"title":{"text":"S\u003csup\u003en\u003c\u002fsup\u003e"},"gridcolor":"rgba(206,230,245,0.2)","linecolor":"rgba(206,230,245,0.4)"},"yaxis":{"title":{"text":"L1 loss"},"gridcolor":"rgba(206,230,245,0.2)","linecolor":"rgba(206,230,245,0.4)"},"legend":{"bgcolor":"rgba(0,0,0,0)"},"margin":{"l":60,"r":20,"t":20,"b":60},"hovermode":false,"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)"},                        {"displayModeBar": false, "responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('0e992a3b-d55f-44b4-998a-dcf33924e13c');
+var gd = document.getElementById('6c734d45-2399-403c-8529-971618d76090');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -257,13 +254,57 @@ if (outputEl) {{
 </div>
 </div>
 </section>
-<section id="reconstruction-quality" class="slide level2">
-<h2>Reconstruction Quality</h2>
-<div style="font-size: 70%;">
-<p>Galaxies encoded onto <strong>S²</strong> are faithfully reconstructed — similar morphologies cluster together on the sphere.</p>
+<section id="reconstruction-quality" class="slide level2" data-auto-animate="true" style="font-size: 50%;">
+<h2 data-id="quarto-animate-title">Reconstruction Quality</h2>
+<p>Original IllustrisTNG SKIRT SDSS images</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/illustris_original.png" class="quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
 </div>
-
-<img data-src="images/illustris_S2_alpha.png" class="quarto-figure quarto-figure-center r-stretch" width="700"><p>TODO: add S^128</p>
+<p>ResNet-18 autoencoder, 512 features: Sufficient reconstruction</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/illustris_recon_ae_512.png" class="quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</section>
+<section id="reconstruction-quality-1" class="slide level2" data-auto-animate="true" style="font-size: 50%;">
+<h2 data-id="quarto-animate-title">Reconstruction Quality</h2>
+<p>Original IllustrisTNG SKIRT SDSS images</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/illustris_original.png" class="quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+<p>ResNet-18 VAE-S<span class="math inline">\({^2}\)</span>: Details are lost, but the overall structure is preserved</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/illustris_recon_vae_S2.png" class="quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+<p>ResNet-18 VAE-S<span class="math inline">\(^{128}\)</span>: Details are present, but blurry</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/illustris_recon_vae_S128.png" class="quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</section>
+<section id="umap-vs.-spherinator" class="slide level2">
+<h2>UMAP vs.&nbsp;Spherinator</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/illustris_umap.png" class="quarto-figure quarto-figure-center" width="700"></p>
+</figure>
+</div>
+</div><div class="column" style="width:45%;">
+<ul>
+<li>UMAP is a popular dimensionality reduction technique, but it can distort the global structure of the data.</li>
+<li>Spherinator preserves the global geometry of the data on a hypersphere, leading to more meaningful representations.</li>
+</ul>
+</div></div>
 </section>
 <section id="the-power-spherical-distribution" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">The Power Spherical Distribution</h2>
@@ -284,7 +325,7 @@ if (outputEl) {{
 <li>Takes the <strong>spherical latent positions</strong> from Spherinator</li>
 <li>Generates a <strong>HiPS</strong> (<strong>Hi</strong>erarchical <strong>P</strong>rogressive <strong>S</strong>urvey) map</li>
 <li>Enables <strong>progressive zoom</strong> — more detail as you zoom in</li>
-<li>Works with any standard HiPS viewer (Aladin, Jasmin, …)</li>
+<li>Works with any standard HiPS viewer (Aladin, Aladin-Lite)</li>
 </ul>
 <p><a href="https://github.com/HITS-AIN/HiPSter">github.com/HITS-AIN/HiPSter</a></p>
 </div><div class="column" style="width:45%;">
@@ -321,22 +362,20 @@ if (outputEl) {{
 <section id="gaia-spectra-explorer-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Gaia Spectra Explorer</h2>
 <iframe width="600" height="600" src="https://space.h-its.org/Gaia/" title="Webpage example"></iframe>
-</section>
-<section id="ai-deployment-platform" class="slide level2">
-<h2>AI Deployment Platform</h2>
-<div style="font-size: 70%;">
-<p><a href="https://flyte.org/">Flyte</a> orchestrates the full <strong>PEST → Spherinator → HiPSter</strong> workflow — reproducible, scalable pipelines on HPC and cloud infrastructure.</p>
-</div>
+<!-- ## Deployment Platform
 
-<img data-src="images/flyte-architecture.svg" class="quarto-figure quarto-figure-center r-stretch" width="900"></section>
-<section id="the-shared-universe-engine-dynaverse-sue" class="slide level2">
-<h2>The Shared Universe Engine (DynaVerse SUE)</h2>
+::: {style="font-size: 70%;"}
+[Flyte](https://flyte.org/) orchestrates the full **PEST → Spherinator → HiPSter** workflow — reproducible, scalable pipelines on HPC and cloud infrastructure.
+:::
 
-<img data-src="images/dynaverse.png" class="quarto-figure quarto-figure-center r-stretch" width="300"><div style="font-size: 70%;">
-<ul>
-<li>Cross-dataset comparison between simulations and observations.</li>
-</ul>
-</div>
+![](images/flyte-architecture.svg){fig-align="center" width="900"} -->
+<!-- ## The Shared Universe Engine (DynaVerse SUE)
+
+![](images/dynaverse.png){fig-align="center" width="300"}
+
+::: {style="font-size: 70%;"}
+- Cross-dataset comparison between simulations and observations.
+::: -->
 </section>
 <section id="summary-and-outlook" class="slide level2">
 <h2>Summary and Outlook</h2>
