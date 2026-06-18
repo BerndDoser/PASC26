@@ -2,24 +2,24 @@ title: From Visualization to Knowledge Discovery
 subtitle: PASC 2026
 author: Bernd Doser & Sebastian Trujillo-Gomez
 # author: <strong>Bernd Doser & Sebastian Trujillo-Gomez</strong><br>Kai Polsterer, Andreas Fehlner, Fenja Schweder, Romain Chazotte
-date: 2026/06/30
-date-format: "MMMM YYYY"
+# date: 2026/06/30
+# date-format: "MMMM YYYY"
 institute: Heidelberg Institute for Theoretical Studies (HITS)
-title-slide-attributes:
-  data-background-image: images/SPACE_title_slide.png
-  data-background-size: cover
+# title-slide-attributes:
+#   data-background-image: images/SPACE_title_slide.png
+#   data-background-size: cover
 format:
   revealjs:
     logo: images/HITS-Logo-negativ.png
-    footer: "Spherinator & HiPSter (B. Doser & S. Trujillo-Gomez)"
+    footer: "From Visualization to Knowledge Discovery (B. Doser & S. Trujillo-Gomez)"
     slide-number: true
     # show-slide-number: print
     
     highlight-style: a11y
     bibliography: references.bib
     width: 1300
-    template-partials:
-      - title-slide.html
+    # template-partials:
+    #   - title-slide.html
     menu: false
 
     theme: [default, custom.scss]

@@ -8,4 +8,6 @@ build/
 dist/
 index_files/
 index.quarto_ipynb_*
+speech.md
+videos/presentation_ready.mp4
 wheels/

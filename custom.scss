@@ -33,9 +33,9 @@ $code-block-bg: transparent !default;
 /*-- scss:rules --*/
 
 // Fix links so they are not cut off
-.reveal a {
-  line-height: 1.3em;
-}
+// .reveal a {
+//   line-height: 1.3em;
+// }
 
 .reveal .footer {
   color: #cee6f5;
@@ -48,4 +48,12 @@ $code-block-bg: transparent !default;
   top: 1.5vh !important;
   bottom: unset !important;
   right: 1.5vh !important;
+}
+
+.reveal .slide-number {
+  bottom: 15px !important;
+  right: 25px !important;
+  left: unset !important;
+  top: unset !important;
+  background: transparent !important;
 }
