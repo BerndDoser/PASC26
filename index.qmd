@@ -22,7 +22,7 @@
 
 ## The Data Pipeline {auto-animate="true"}
 
-![](images/projectx_v3.png){.absolute left=0 width=1800}
+![](images/pipeline.png){fig-align="center"}
 
 
 ## The Data Pipeline {auto-animate="true"}
@@ -30,21 +30,25 @@
 - [PEST](https://github.com/HITS-AIN/PEST) preprocess universal cosmological simulation data into multi-channel images, data cubes, and point clouds
 - [Apache Parquet](https://parquet.apache.org/) stores multi-modal data in an efficient columnar data storage
 
-![](images/projectx_v3.png){width=400}
-
+:::: {.columns}
+::: {.column width="45%"}
+![](images/pipeline.png){fig-align="center"}
+:::
+::: {.column width="55%"}
+- [ONNX](https://onnx.ai/) standardizes the machine learning model format for interoperability across frameworks and platforms
+:::
+::::
 
 ## Spherinator
-<!-- ![](images/spherinator_logo.png){width=60} -->
+<!-- ![](images/logos/spherinator.png){width=60} -->
 
 - Representation learning using a **Variational Autoencoder**
 - Dimensionality reduction to a **(Hyper-)Spherical Latent Space**
 - Completely **self-supervised** — no labels required
 
-![](images/vae.svg){width="900" fig-align="center"}
+![](images/vae-sphere.svg){width="900" fig-align="center"}
 
-::: {style="font-size: 50%;"}
-@Polsterer2024, @Doser2026
-:::
+[@Polsterer2024; @Doser2026]{style="font-size: 50%;"}
 
 
 ## How many dimensions?
@@ -172,10 +176,9 @@ ResNet-18 VAE-S$^{128}$: Details are present, but blurry
 ::: {.column width="55%"}
 - Takes the **spherical latent positions** from Spherinator
 - Generates a **HiPS** (**Hi**erarchical **P**rogressive **S**urvey) map
-- Enables **progressive zoom** — more detail as you zoom in
+- Enables **progressive zoom** - more detail as you zoom in
 - Works with any standard HiPS viewer (Aladin, Aladin-Lite)
 
-[github.com/HITS-AIN/HiPSter](https://github.com/HITS-AIN/HiPSter)
 :::
 ::: {.column width="45%"}
 ![](images/P404_f2.png){width="480" fig-align="center"}
