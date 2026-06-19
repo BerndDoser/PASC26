@@ -29,23 +29,45 @@
 ## ![](images/logos/pest.png){height="60px" style="vertical-align: middle;"} Data Acquisition {auto-animate="true"}
 
 - [PEST](https://github.com/HITS-AIN/PEST) preprocesses universal cosmological simulation data into multi-channel images, data cubes, and point clouds
-- PEST follows a classic Extract → Transform → Load pattern driven by a YAML configuration file.
+
+- ETL pipeline (Extract $\rightarrow$ Transform $\rightarrow$ Load) driven by YAML
+<!-- - FAIR data management principles -->
+
 - [Apache Parquet](https://parquet.apache.org/) stores multi-modal data in an efficient columnar data storage
-- Uploads to [Zenodo](https://zenodo.org/) for open access and long-term preservation
-- Upload to [Hugging Face Hub](https://huggingface.co/) for easy sharing and integration with machine learning workflows
+
+- Upload to [Hugging Face](https://huggingface.co/) or [Zenodo](https://zenodo.org/) for easy sharing and integration with ML frameworks
 
 
 
 ## ![](images/logos/spherinator.png){height="60px" style="vertical-align: middle;"} Representation Learning
 
 - Representation learning using a **Variational Autoencoder**
-- Dimensionality reduction to a **(Hyper-)Spherical Latent Space**
-- Completely **self-supervised** — no labels required
-- [ONNX](https://onnx.ai/) standardizes the machine learning model format for interoperability across frameworks and platforms
 
-![](images/vae-sphere.svg){width="900" fig-align="center"}
+![](images/vae-sphere.svg){width="900" fig-align="center" margin-bottom="-40px;"}
 
 [@Polsterer2024; @Doser2026]{style="font-size: 50%;"}
+
+- Dimensionality reduction to a **(Hyper-)Spherical Latent Space**
+- Completely **self-supervised** - no labels required
+
+. . .
+
+- Export to [ONNX](https://onnx.ai/) for interoperability $\rightarrow$ ![](images/logos/huggingface.svg){height="60px" style="vertical-align: middle;"}
+
+
+## Why a (Hyper-)Sperical Latent Space? {auto-animate="true"}
+
+:::: {.columns}
+::: {.column width="60%"}
+- **Unbiased representation learning**: The (hyper-)sphere has no preferred directions, so it does not bias the model towards any particular features or patterns in the data.
+- **Better interpolation**: The (hyper-)sphere allows for smooth interpolation between points in the latent space, which can lead to better reconstruction and generation of new data.
+:::
+
+::: {.column width="40%"}
+![](images/power_spherical.png){fig-align="center"}
+[[@DeCao2020]]{style="font-size: 50%;"}
+:::
+::::
 
 
 ## How many dimensions?
@@ -136,34 +158,14 @@ ResNet-18 VAE-S$^{128}$: Details are present, but blurry
 ## UMAP vs. Spherinator
 
 :::: {.columns}
-
 ::: {.column width="55%"}
 ![](images/illustris_umap.png){width="700" fig-align="center"}
 :::
 
 ::: {.column width="45%"}
-
 - UMAP is a popular dimensionality reduction technique, but it can distort the global structure of the data.
 - Spherinator preserves the global geometry of the data on a hypersphere, leading to more meaningful representations.
 :::
-
-::::
-
-
-
-## The Power Spherical Distribution {auto-animate="true"}
-
-:::: {.columns}
-
-::: {.column width="55%"}
-- The **Power Spherical distribution** is a generalization of the von Mises-Fisher distribution, allowing for more flexible modeling of data on hyperspheres.
-:::
-
-::: {.column width="45%"}
-![](images/power_spherical.png){width="600" fig-align="center"}
-[[@DeCao2020]]{style="font-size: 50%;"}
-:::
-
 ::::
 
 
@@ -209,17 +211,35 @@ ResNet-18 VAE-S$^{128}$: Details are present, but blurry
 
 :::
 ::: {.column width="45%"}
-<video src="../videos/celebrities.mp4" controls></video>
+```{=html}
+<iframe width="600" height="600" src="https://space.h-its.org/celebrities/"></iframe>
+```
+<!-- <video src="../videos/celebrities.mp4" controls></video> -->
 :::
 ::::
 
 
-## Gaia Explorer {auto-animate="true"}
+## Gaia Spectral Data {auto-animate="true"}
 
+::: {layout='[1,1]'}
+::: n1
 ::: {style="font-size: 80%;"}
 - [Gaia DR3 XP](http://cdn.gea.esac.esa.int/Gaia/gdr3/): Largest most uniform all-sky spectrophotometric survey (over 220 million sources)
 - Low-resolution spectra reveal temperature and chemical composition
+
+![](images/calibrated_spectrum_plot.png){fig-align="center"}
 :::
+:::
+
+::: n2
+```{=html}
+<iframe width="600" height="600" src="https://space.h-its.org/Gaia/"></iframe>
+```
+:::
+:::
+
+
+## Gaia Explorer {auto-animate="true"}
 
 ![](images/gaia_explorer.png){fig-align="center"}
 
@@ -228,8 +248,8 @@ ResNet-18 VAE-S$^{128}$: Details are present, but blurry
 :::
 
 
-## Gaia Explorer
-<video src="../videos/presentation_ready.mp4" controls width="100%" height="85%"></video>
+<!-- ## Gaia Explorer
+<video src="../videos/presentation_ready.mp4" controls width="100%" height="85%"></video> -->
 
 
 <!-- ## {background-video="../videos/presentation_ready.mp4"} -->
@@ -261,6 +281,11 @@ ResNet-18 VAE-S$^{128}$: Details are present, but blurry
 - **DynaVerse SUE** — unified platform connecting data, models, and simulations across scales and disciplines
 
 - First results available at [space.h-its.org](https://space.h-its.org)
+
+
+## Thank you for your attention!
+
+![](images/FIFA-trophy.png){fig-align="center"}
 
 
 ## Acknowledgement & Disclaimer
