@@ -185,49 +185,44 @@ Bernd Doser &amp; Sebastian Trujillo-Gomez
 <section id="introduction" class="slide level2">
 <h2>Introduction</h2>
 <ul>
-<li>The amount of astronomical data is growing exponentially
+<li><p>The amount of astronomical data is growing exponentially</p>
 <ul>
-<li>Exascale cosmological simulations produce petabytes of data</li>
-<li>Surveys (e.g.&nbsp;Euclid, LSST) are generating terabytes of data <strong>daily</strong></li>
+<li>Exascale cosmological simulations produce <strong>petabytes of data</strong></li>
+<li>Surveys (e.g.&nbsp;Euclid, LSST) are generating <strong>terabytes of data daily</strong></li>
 </ul></li>
-<li>Machine learning methods to explore and understand this data are needed</li>
-<li><strong>Our approach:</strong> Modular open-source tools for self-supervised knowledge discovery<br>
-<a href="https://github.com/HITS-AIN/PEST">PEST</a> <span class="math inline">\(\rightarrow\)</span> <a href="https://github.com/HITS-AIN/Spherinator">Spherinator</a> <span class="math inline">\(\rightarrow\)</span> <a href="https://github.com/HITS-AIN/HiPSter">HiPSter</a> <span class="math inline">\(\rightarrow\)</span> Shared Universe Engine</li>
+<li><p>Machine learning methods to explore and understand this data are needed</p></li>
+<li><p><strong>Our approach:</strong> Modular open-source tools for self-supervised knowledge discovery<br>
+<a href="https://github.com/HITS-AIN/PEST">PEST</a> <span class="math inline">\(\rightarrow\)</span> <a href="https://github.com/HITS-AIN/Spherinator">Spherinator</a> <span class="math inline">\(\rightarrow\)</span> <a href="https://github.com/HITS-AIN/HiPSter">HiPSter</a> <span class="math inline">\(\rightarrow\)</span> Shared Universe Engine</p></li>
 </ul>
 </section>
-<section id="the-data-pipeline" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">The Data Pipeline</h2>
+<section id="end-to-end-ml-pipeline" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">End-to-End ML Pipeline</h2>
 
 <img data-src="images/pipeline.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="the-data-pipeline-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">The Data Pipeline</h2>
+<section id="data-acquisition" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"><img data-src="images/logos/pest.png" style="vertical-align: middle;" height="60"> Data Acquisition</h2>
 <ul>
-<li><a href="https://github.com/HITS-AIN/PEST">PEST</a> preprocess universal cosmological simulation data into multi-channel images, data cubes, and point clouds</li>
+<li><a href="https://github.com/HITS-AIN/PEST">PEST</a> preprocesses universal cosmological simulation data into multi-channel images, data cubes, and point clouds</li>
+<li>PEST follows a classic Extract → Transform → Load pattern driven by a YAML configuration file.</li>
 <li><a href="https://parquet.apache.org/">Apache Parquet</a> stores multi-modal data in an efficient columnar data storage</li>
+<li>Uploads to <a href="https://zenodo.org/">Zenodo</a> for open access and long-term preservation</li>
+<li>Upload to <a href="https://huggingface.co/">Hugging Face Hub</a> for easy sharing and integration with machine learning workflows</li>
 </ul>
-<div class="columns">
-<div class="column" style="width:45%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/pipeline.png" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-</div><div class="column" style="width:55%;">
-<ul>
-<li><a href="https://onnx.ai/">ONNX</a> standardizes the machine learning model format for interoperability across frameworks and platforms</li>
-</ul>
-</div></div>
 </section>
-<section id="spherinator" class="slide level2">
-<h2>Spherinator</h2>
-<!-- ![](images/logos/spherinator.png){width=60} -->
+<section id="representation-learning" class="slide level2">
+<h2><img data-src="images/logos/spherinator.png" style="vertical-align: middle;" height="60"> Representation Learning</h2>
 <ul>
 <li>Representation learning using a <strong>Variational Autoencoder</strong></li>
 <li>Dimensionality reduction to a <strong>(Hyper-)Spherical Latent Space</strong></li>
 <li>Completely <strong>self-supervised</strong> — no labels required</li>
+<li><a href="https://onnx.ai/">ONNX</a> standardizes the machine learning model format for interoperability across frameworks and platforms</li>
 </ul>
-
-<img data-src="images/vae-sphere.svg" class="quarto-figure quarto-figure-center r-stretch" width="900"><p><span style="font-size: 50%;"><span class="citation" data-cites="Polsterer2024">Polsterer et al. (<a href="#/references" role="doc-biblioref" onclick="">2024</a>)</span>; <span class="citation" data-cites="Doser2026">Doser, Polsterer, and Trujillo-Gomez (<a href="#/references" role="doc-biblioref" onclick="">2026</a>)</span></span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/vae-sphere.svg" class="quarto-figure quarto-figure-center" width="900"></p>
+</figure>
+</div>
+<p><span style="font-size: 50%;"><span class="citation" data-cites="Polsterer2024">Polsterer et al. (<a href="#/references" role="doc-biblioref" onclick="">2024</a>)</span>; <span class="citation" data-cites="Doser2026">Doser, Polsterer, and Trujillo-Gomez (<a href="#/references" role="doc-biblioref" onclick="">2026</a>)</span></span></p>
 </section>
 <section id="how-many-dimensions" class="slide level2">
 <h2>How many dimensions?</h2>
@@ -241,12 +236,12 @@ Bernd Doser &amp; Sebastian Trujillo-Gomez
 <div style="font-size: 70%;">
 <p>Determine the optimal number of dimensions in the latent space by analyzing the reconstruction.</p>
 </div>
-<div id="6cc35d5f" class="cell" data-execution_count="1">
+<div id="8bee391a" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div style="height:525px; width:100%;">            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script>if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.6.0.min.js" integrity="sha256-QaOVwtVY0T02VaHrr6pnoHLCwayMJp4O5n4YyaE3rJk=" crossorigin="anonymous"></script>                <div id="5641516f-3ddd-4f1b-a21c-3b38881e326b" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("5641516f-3ddd-4f1b-a21c-3b38881e326b")) {                    Plotly.newPlot(                        "5641516f-3ddd-4f1b-a21c-3b38881e326b",                        [{"line":{"color":"#0088c2","width":3},"marker":{"size":10},"mode":"lines+markers","name":"Validation","x":{"dtype":"i2","bdata":"AgAEAAgAEAAgAEAAgAAAAQ=="},"y":{"dtype":"f8","bdata":"SDgteNFXkD8wJ2iTwyeNP9jV5Cmr6Yo\u002fdLM\u002fUG7bhz8jDtlAutiEP2\u002frE+V3P4M\u002fGxb+ZyhJgj8j988uOrSDPw=="},"type":"scatter"},{"line":{"color":"#cee6f5","width":3},"marker":{"size":10},"mode":"lines+markers","name":"Training","x":{"dtype":"i2","bdata":"AgAEAAgAEAAgAEAAgAAAAQ=="},"y":{"dtype":"f8","bdata":"AaCKG7eYjz8a+bziqUeKPy0296EcFoQ\u002fb1f5r71ggT97QhslVBV\u002fP8GAb+TLVX0\u002f6NhBJa5jfD9DRlGxezx+Pw=="},"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"font":{"color":"#cee6f5","size":16},"xaxis":{"title":{"text":"S\u003csup\u003en\u003c\u002fsup\u003e"},"gridcolor":"rgba(206,230,245,0.2)","linecolor":"rgba(206,230,245,0.4)"},"yaxis":{"title":{"text":"L1 loss"},"gridcolor":"rgba(206,230,245,0.2)","linecolor":"rgba(206,230,245,0.4)"},"legend":{"bgcolor":"rgba(0,0,0,0)"},"margin":{"l":60,"r":20,"t":20,"b":60},"hovermode":false,"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)"},                        {"displayModeBar": false, "responsive": true}                    ).then(function(){
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.6.0.min.js" integrity="sha256-QaOVwtVY0T02VaHrr6pnoHLCwayMJp4O5n4YyaE3rJk=" crossorigin="anonymous"></script>                <div id="c3c3d56b-b7a9-4674-bdbd-71dd54d0f507" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("c3c3d56b-b7a9-4674-bdbd-71dd54d0f507")) {                    Plotly.newPlot(                        "c3c3d56b-b7a9-4674-bdbd-71dd54d0f507",                        [{"line":{"color":"#0088c2","width":3},"marker":{"size":10},"mode":"lines+markers","name":"Validation","x":{"dtype":"i2","bdata":"AgAEAAgAEAAgAEAAgAAAAQ=="},"y":{"dtype":"f8","bdata":"SDgteNFXkD8wJ2iTwyeNP9jV5Cmr6Yo\u002fdLM\u002fUG7bhz8jDtlAutiEP2\u002frE+V3P4M\u002fGxb+ZyhJgj8j988uOrSDPw=="},"type":"scatter"},{"line":{"color":"#cee6f5","width":3},"marker":{"size":10},"mode":"lines+markers","name":"Training","x":{"dtype":"i2","bdata":"AgAEAAgAEAAgAEAAgAAAAQ=="},"y":{"dtype":"f8","bdata":"AaCKG7eYjz8a+bziqUeKPy0296EcFoQ\u002fb1f5r71ggT97QhslVBV\u002fP8GAb+TLVX0\u002f6NhBJa5jfD9DRlGxezx+Pw=="},"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"font":{"color":"#cee6f5","size":16},"xaxis":{"title":{"text":"S\u003csup\u003en\u003c\u002fsup\u003e"},"gridcolor":"rgba(206,230,245,0.2)","linecolor":"rgba(206,230,245,0.4)"},"yaxis":{"title":{"text":"L1 loss"},"gridcolor":"rgba(206,230,245,0.2)","linecolor":"rgba(206,230,245,0.4)"},"legend":{"bgcolor":"rgba(0,0,0,0)"},"margin":{"l":60,"r":20,"t":20,"b":60},"hovermode":false,"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)"},                        {"displayModeBar": false, "responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('5641516f-3ddd-4f1b-a21c-3b38881e326b');
+var gd = document.getElementById('c3c3d56b-b7a9-4674-bdbd-71dd54d0f507');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -336,14 +331,14 @@ if (outputEl) {{
 </div></div>
 </section>
 <section id="hipster" class="slide level2">
-<h2>HiPSter</h2>
+<h2><img data-src="images/logos/hipster.png" style="vertical-align: middle;" height="60"> HiPSter</h2>
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
 <li>Takes the <strong>spherical latent positions</strong> from Spherinator</li>
 <li>Generates a <strong>HiPS</strong> (<strong>Hi</strong>erarchical <strong>P</strong>rogressive <strong>S</strong>urvey) map</li>
 <li>Enables <strong>progressive zoom</strong> - more detail as you zoom in</li>
-<li>Works with any standard HiPS viewer (Aladin, Aladin-Lite)</li>
+<li>Works with any standard HiPS viewer (e.g.&nbsp;<a href="https://github.com/cds-astro/aladin-lite">Aladin-Lite</a>)</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div class="quarto-figure quarto-figure-center">
@@ -352,15 +347,32 @@ if (outputEl) {{
 </figure>
 </div>
 </div></div>
-</section>
-<section id="hipster-the-inference" class="slide level2">
-<h2>HiPSter: The Inference</h2>
+<!-- ## HiPSter: The Inference
 
-<img data-src="images/HEALPix.png" class="quarto-figure quarto-figure-center r-stretch" width="800"><ul>
-<li>The <strong>HEALPix framework</strong> is used to generate a <strong>Hierarchical Progressive Survey (HiPS)</strong> for the corresponding spherical latent space positions.</li>
-<li><a href="https://github.com/cds-astro/aladin-lite">Aladin-Lite</a> is designed to visualize the HiPS representation.</li>
+![](images/HEALPix.png){width="800" fig-align="center"}
+
+- The **HEALPix framework** is used to generate a **Hierarchical Progressive Survey (HiPS)** for the corresponding spherical latent space positions.
+- [Aladin-Lite](https://github.com/cds-astro/aladin-lite) is designed to visualize the HiPS representation.
+
+[[@Fernique_2015]]{style="font-size: 50%;"} -->
+</section>
+<section id="demo-celebrities" class="slide level2">
+<h2>Demo: Celebrities</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div style="text-align: center; border: 1px solid #cee6f5; border-radius: 8px; padding: 0.5em 1em; margin-bottom: 0.75em; font-style: italic;">
+<p>“Fill the sky with stars”</p>
+</div>
+<ul>
+<li><a href="https://huggingface.co/datasets/tonyassi/celebrity-1000">tonyassi/celebrity-1000</a>: 18,184 images of 1000 celebrities</li>
+<li>Trained a VAE-S<span class="math inline">\(^2\)</span> with a ResNet-18 <!-- - Combined Reconstruction Loss:
+  - L1
+  - Perceptual Loss (VGG-16 features) --></li>
 </ul>
-<p><span style="font-size: 50%;"><span class="citation" data-cites="Fernique_2015">(<a href="#/references" role="doc-biblioref" onclick="">Fernique et al. 2015</a>)</span></span></p>
+</div><div class="column" style="width:45%;">
+<video src="../videos/celebrities.mp4" controls="">
+</video>
+</div></div>
 </section>
 <section id="gaia-explorer" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Gaia Explorer</h2>
@@ -379,13 +391,7 @@ if (outputEl) {{
 <h2>Gaia Explorer</h2>
 <video src="../videos/presentation_ready.mp4" controls="" width="100%" height="85%">
 </video>
-</section>
-<section id="section" class="slide level2" data-background-video="../videos/presentation_ready.mp4">
-<h2></h2>
-<!-- ## Gaia Spectra Explorer {auto-animate="true"}
-
-<iframe width="600" height="600" src="https://space.h-its.org/Gaia/" title="Webpage example"></iframe>
-``` -->
+<!-- ## {background-video="../videos/presentation_ready.mp4"} -->
 <!-- ## Deployment Platform
 
 ::: {style="font-size: 70%;"}
@@ -393,13 +399,18 @@ if (outputEl) {{
 :::
 
 ![](images/flyte-architecture.svg){fig-align="center" width="900"} -->
-<!-- ## The Shared Universe Engine (DynaVerse SUE)
-
-![](images/dynaverse.png){fig-align="center" width="300"}
-
-::: {style="font-size: 70%;"}
-- Cross-dataset comparison between simulations and observations.
-::: -->
+</section>
+<section id="the-shared-universe-engine" class="slide level2">
+<h2><img data-src="images/logos/dynaverse.png" style="vertical-align: middle;" height="60"> The Shared Universe Engine</h2>
+<ul>
+<li><p><a href="https://dynaverse.astro.uni-koeln.de/">DynaVerse</a> (Our Dynamic Universe) is a German Cluster of Excellence that combines astrophysics, mathematics, and computer science to study how cosmic processes across vastly different timescales shape the universe</p></li>
+<li><p>The SUE (Shared Universe Engine) is a unified platform connecting data, models, and simulations across scales and disciplines</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/SUE-color-final.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
 </section>
 <section id="summary-and-outlook" class="slide level2">
 <h2>Summary and Outlook</h2>
@@ -407,7 +418,7 @@ if (outputEl) {{
 <li><p><strong>PEST</strong> — ETL pipeline for cosmological simulations (AREPO, ChaNGa, Gadget, RAMSES) and surveys</p></li>
 <li><p><strong>Spherinator</strong> — self-supervised VAE with (hyper-)spherical latent space for unbiased representation learning</p></li>
 <li><p><strong>HiPSter</strong> — scalable interactive visualization via progressive HiPS maps on the sphere</p></li>
-<li><p><strong>DynaVerse SUE</strong> — unified platform connecting data</p></li>
+<li><p><strong>DynaVerse SUE</strong> — unified platform connecting data, models, and simulations across scales and disciplines</p></li>
 <li><p>First results available at <a href="https://space.h-its.org">space.h-its.org</a></p></li>
 </ul>
 </section>
@@ -451,9 +462,6 @@ Cao, Nicola De, and Wilker Aziz. 2020. <span>“The Power Spherical Distribution
 </div>
 <div id="ref-Doser2026" class="csl-entry" role="listitem">
 Doser, Bernd, Kai L. Polsterer, and Sebastian Trujillo-Gomez. 2026. <span>“Representation Learning for Gaia XP DR3.”</span> <em>Astronomical Data Analysis Software and Systems XXXV</em>. <a href="https://doi.org/10.5281/zenodo.20689266">https://doi.org/10.5281/zenodo.20689266</a>.
-</div>
-<div id="ref-Fernique_2015" class="csl-entry" role="listitem">
-Fernique, P., M. G. Allen, T. Boch, A. Oberto, F-X. Pineau, D. Durand, C. Bot, et al. 2015. <span>“Hierarchical Progressive Surveys: Multi-Resolution HEALPix Data Structures for Astronomical Images, Catalogues, and 3-Dimensional Data Cubes.”</span> <em>Astronomy &amp;Amp; Astrophysics</em> 578 (June): A114. <a href="https://doi.org/10.1051/0004-6361/201526075">https://doi.org/10.1051/0004-6361/201526075</a>.
 </div>
 <div id="ref-Polsterer2024" class="csl-entry" role="listitem">
 Polsterer, Kai L., Bernd Doser, Andreas Fehlner, and Sebastian Trujillo-Gomez. 2024. <span>“Spherinator and HiPSter: Representation Learning for Unbiased Knowledge Discovery from Simulations.”</span> <em>Astronomical Data Analysis Software and Systems XXXIII</em>. <a href="https://doi.org/10.48550/arXiv.2406.03810">https://doi.org/10.48550/arXiv.2406.03810</a>.

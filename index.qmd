@@ -12,39 +12,36 @@
 ## Introduction
 
 - The amount of astronomical data is growing exponentially
-  - Exascale cosmological simulations produce petabytes of data
-  - Surveys (e.g. Euclid, LSST) are generating terabytes of data **daily**
+  - Exascale cosmological simulations produce **petabytes of data**
+  - Surveys (e.g. Euclid, LSST) are generating **terabytes of data daily**
 
-- Machine learning methods to explore and understand this data are needed
+- Machine learning methods are needed to explore this amount of data
+
 - **Our approach:** Modular open-source tools for self-supervised knowledge discovery\
   [PEST](https://github.com/HITS-AIN/PEST) $\rightarrow$ [Spherinator](https://github.com/HITS-AIN/Spherinator) $\rightarrow$ [HiPSter](https://github.com/HITS-AIN/HiPSter) $\rightarrow$ Shared Universe Engine
 
 
-## The Data Pipeline {auto-animate="true"}
+## End-to-End ML Pipeline {auto-animate="true"}
 
 ![](images/pipeline.png){fig-align="center"}
 
 
-## The Data Pipeline {auto-animate="true"}
+## ![](images/logos/pest.png){height="60px" style="vertical-align: middle;"} Data Acquisition {auto-animate="true"}
 
-- [PEST](https://github.com/HITS-AIN/PEST) preprocess universal cosmological simulation data into multi-channel images, data cubes, and point clouds
+- [PEST](https://github.com/HITS-AIN/PEST) preprocesses universal cosmological simulation data into multi-channel images, data cubes, and point clouds
+- PEST follows a classic Extract → Transform → Load pattern driven by a YAML configuration file.
 - [Apache Parquet](https://parquet.apache.org/) stores multi-modal data in an efficient columnar data storage
+- Uploads to [Zenodo](https://zenodo.org/) for open access and long-term preservation
+- Upload to [Hugging Face Hub](https://huggingface.co/) for easy sharing and integration with machine learning workflows
 
-:::: {.columns}
-::: {.column width="45%"}
-![](images/pipeline.png){fig-align="center"}
-:::
-::: {.column width="55%"}
-- [ONNX](https://onnx.ai/) standardizes the machine learning model format for interoperability across frameworks and platforms
-:::
-::::
 
-## Spherinator
-<!-- ![](images/logos/spherinator.png){width=60} -->
+
+## ![](images/logos/spherinator.png){height="60px" style="vertical-align: middle;"} Representation Learning
 
 - Representation learning using a **Variational Autoencoder**
 - Dimensionality reduction to a **(Hyper-)Spherical Latent Space**
 - Completely **self-supervised** — no labels required
+- [ONNX](https://onnx.ai/) standardizes the machine learning model format for interoperability across frameworks and platforms
 
 ![](images/vae-sphere.svg){width="900" fig-align="center"}
 
@@ -170,14 +167,14 @@ ResNet-18 VAE-S$^{128}$: Details are present, but blurry
 ::::
 
 
-## HiPSter
+## ![](images/logos/hipster.png){height="60px" style="vertical-align: middle;"} HiPSter
 
 :::: {.columns}
 ::: {.column width="55%"}
 - Takes the **spherical latent positions** from Spherinator
 - Generates a **HiPS** (**Hi**erarchical **P**rogressive **S**urvey) map
 - Enables **progressive zoom** - more detail as you zoom in
-- Works with any standard HiPS viewer (Aladin, Aladin-Lite)
+- Works with any standard HiPS viewer (e.g. [Aladin-Lite](https://github.com/cds-astro/aladin-lite))
 
 :::
 ::: {.column width="45%"}
@@ -186,14 +183,35 @@ ResNet-18 VAE-S$^{128}$: Details are present, but blurry
 ::::
 
 
-## HiPSter: The Inference
+<!-- ## HiPSter: The Inference
 
 ![](images/HEALPix.png){width="800" fig-align="center"}
 
 - The **HEALPix framework** is used to generate a **Hierarchical Progressive Survey (HiPS)** for the corresponding spherical latent space positions.
 - [Aladin-Lite](https://github.com/cds-astro/aladin-lite) is designed to visualize the HiPS representation.
 
-[[@Fernique_2015]]{style="font-size: 50%;"}
+[[@Fernique_2015]]{style="font-size: 50%;"} -->
+
+
+## Demo: Celebrities
+
+:::: {.columns}
+::: {.column width="55%"}
+::: {style="text-align: center; border: 1px solid #cee6f5; border-radius: 8px; padding: 0.5em 1em; margin-bottom: 0.75em; font-style: italic;"}
+"Fill the sky with stars"
+:::
+
+- [tonyassi/celebrity-1000](https://huggingface.co/datasets/tonyassi/celebrity-1000): 18,184 images of 1000 celebrities
+- Trained a VAE-S$^2$ with a ResNet-18
+<!-- - Combined Reconstruction Loss:
+  - L1
+  - Perceptual Loss (VGG-16 features) -->
+
+:::
+::: {.column width="45%"}
+<video src="../videos/celebrities.mp4" controls></video>
+:::
+::::
 
 
 ## Gaia Explorer {auto-animate="true"}
@@ -214,13 +232,7 @@ ResNet-18 VAE-S$^{128}$: Details are present, but blurry
 <video src="../videos/presentation_ready.mp4" controls width="100%" height="85%"></video>
 
 
-## {background-video="../videos/presentation_ready.mp4"}
-
-<!-- ## Gaia Spectra Explorer {auto-animate="true"}
-
-```{=html}
-<iframe width="600" height="600" src="https://space.h-its.org/Gaia/" title="Webpage example"></iframe>
-``` -->
+<!-- ## {background-video="../videos/presentation_ready.mp4"} -->
 
 
 <!-- ## Deployment Platform
@@ -232,14 +244,13 @@ ResNet-18 VAE-S$^{128}$: Details are present, but blurry
 ![](images/flyte-architecture.svg){fig-align="center" width="900"} -->
 
 
-<!-- ## The Shared Universe Engine (DynaVerse SUE)
+## ![](images/logos/dynaverse.png){height="60px" style="vertical-align: middle;"} The Shared Universe Engine
 
-![](images/dynaverse.png){fig-align="center" width="300"}
+- [DynaVerse](https://dynaverse.astro.uni-koeln.de/) (Our Dynamic Universe) is a German Cluster of Excellence that combines astrophysics, mathematics, and computer science to study how cosmic processes across vastly different timescales shape the universe
 
-::: {style="font-size: 70%;"}
-- Cross-dataset comparison between simulations and observations.
-::: -->
+- The SUE (Shared Universe Engine) is a unified platform connecting data, models, and simulations across scales and disciplines
 
+![](images/SUE-color-final.png){fig-align="center"}
 
 
 ## Summary and Outlook
@@ -247,7 +258,7 @@ ResNet-18 VAE-S$^{128}$: Details are present, but blurry
 - **PEST** — ETL pipeline for cosmological simulations (AREPO, ChaNGa, Gadget, RAMSES) and surveys
 - **Spherinator** — self-supervised VAE with (hyper-)spherical latent space for unbiased representation learning
 - **HiPSter** — scalable interactive visualization via progressive HiPS maps on the sphere
-- **DynaVerse SUE** — unified platform connecting data
+- **DynaVerse SUE** — unified platform connecting data, models, and simulations across scales and disciplines
 
 - First results available at [space.h-its.org](https://space.h-its.org)
 
