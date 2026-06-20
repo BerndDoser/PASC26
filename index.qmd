@@ -265,7 +265,7 @@ ResNet-18 VAE-S$^{128}$: Details are present, but blurry
 ![](images/flyte-architecture.svg){fig-align="center" width="900"} -->
 
 
-## The Shared Universe Engine
+## Outlook: Shared Universe Engine
 
 ::: {layout='[1,1]'}
 ::: n1
@@ -282,14 +282,16 @@ ResNet-18 VAE-S$^{128}$: Details are present, but blurry
 ::::
 
 
-## Summary and Outlook
+## Summary
 
-- **PEST** — ETL pipeline for cosmological simulations (AREPO, ChaNGa, Gadget, RAMSES) and surveys
-- **Spherinator** — self-supervised VAE with (hyper-)spherical latent space for unbiased representation learning
-- **HiPSter** — scalable interactive visualization via progressive HiPS maps on the sphere
-- **DynaVerse SUE** — unified platform connecting data, models, and simulations across scales and disciplines
+- **PEST**: ETL pipeline for cosmological simulations and observations
+- **Spherinator**: Self-supervised VAE with (hyper-)spherical latent space for unbiased representation learning
+- **HiPSter**: Scalable interactive visualization via progressive HiPS maps on the sphere
+- **DynaVerse SUE**: Unified platform connecting data, models, and simulations across scales and disciplines
 
-- First results available at [space.h-its.org](https://space.h-its.org)
+::: {style="text-align: center; border: 2px solid #0088c2; border-radius: 12px; padding: 0.3em 0.8em; margin-top: 0.5em; margin-left: auto; margin-right: auto; width: 30%; background: linear-gradient(135deg, rgba(0,136,194,0.15), rgba(206,230,245,0.08)); box-shadow: 0 0 18px rgba(0,136,194,0.5); font-size: 1.1em; font-weight: bold; letter-spacing: 0.04em;"}
+[space.h-its.org](https://space.h-its.org)
+:::
 
 
 ## Thank you for your attention!
