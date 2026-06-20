@@ -9,7 +9,7 @@
 ![](images/illustris_latent_sphere_quarter.png){.absolute top=-120 right=-120 width="500" height="500"}
 
 
-## Introduction
+## Motivation
 
 - The amount of astronomical data is growing exponentially
   - Exascale cosmological simulations produce **petabytes of data**
@@ -17,8 +17,9 @@
 
 - Machine learning methods are needed to explore this amount of data
 
-- **Our approach:** Modular open-source tools for self-supervised knowledge discovery\
-  [PEST](https://github.com/HITS-AIN/PEST) $\rightarrow$ [Spherinator](https://github.com/HITS-AIN/Spherinator) $\rightarrow$ [HiPSter](https://github.com/HITS-AIN/HiPSter) $\rightarrow$ Shared Universe Engine
+- **Our approach:** Modular open-source tools for self-supervised knowledge discovery and interactive visualization of large-scale cosmological data
+
+  <!-- [PEST](https://github.com/HITS-AIN/PEST) $\rightarrow$ [Spherinator](https://github.com/HITS-AIN/Spherinator) $\rightarrow$ [HiPSter](https://github.com/HITS-AIN/HiPSter) $\rightarrow$ Shared Universe Engine -->
 
 
 ## End-to-End ML Pipeline {auto-animate="true"}
@@ -264,13 +265,21 @@ ResNet-18 VAE-S$^{128}$: Details are present, but blurry
 ![](images/flyte-architecture.svg){fig-align="center" width="900"} -->
 
 
-## ![](images/logos/dynaverse.png){height="60px" style="vertical-align: middle;"} The Shared Universe Engine
+## The Shared Universe Engine
 
-- [DynaVerse](https://dynaverse.astro.uni-koeln.de/) (Our Dynamic Universe) is a German Cluster of Excellence that combines astrophysics, mathematics, and computer science to study how cosmic processes across vastly different timescales shape the universe
+::: {layout='[1,1]'}
+::: n1
+![](images/logos/dynaverse.png){fig-align="center" style="width: 40%; margin-bottom: -30px;"}
 
-- The SUE (Shared Universe Engine) is a unified platform connecting data, models, and simulations across scales and disciplines
-
+::: {style="font-size: 80%;"}
+- [DynaVerse](https://dynaverse.astro.uni-koeln.de/) is a **German Cluster of Excellence** that combines **astrophysics, mathematics, and computer science** to study cosmic processes of different timescales
+- The SUE (Shared Universe Engine) is a **unified platform** connecting data, models, and simulations across scales and disciplines
+:::
+:::
+::: n2
 ![](images/SUE-color-final.png){fig-align="center"}
+:::
+::::
 
 
 ## Summary and Outlook
