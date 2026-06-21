@@ -12,8 +12,8 @@
 ## Motivation
 
 - The amount of astronomical data is growing exponentially
-  - Exascale cosmological simulations produce **petabytes of data**
-  - Surveys (e.g. Euclid, LSST) are generating **terabytes of data daily**
+  - Exascale cosmological simulations produce ***petabytes of data***
+  - Surveys (e.g. Euclid, LSST) are generating ***terabytes of data daily***
 
 - Machine learning methods are needed to explore this amount of data
 
@@ -50,23 +50,21 @@
 
 - Dimensionality reduction to a **(Hyper-)Spherical Latent Space**
 - Completely **self-supervised** - no labels required
-
-. . .
-
-- Export to [ONNX](https://onnx.ai/) for interoperability $\rightarrow$ ![](images/logos/huggingface.svg){height="60px" style="vertical-align: middle;"}
+- Export to [ONNX](https://onnx.ai/) for ***interoperability*** with other ML frameworks and deployment platforms
 
 
 ## Why a (Hyper-)Sperical Latent Space? {auto-animate="true"}
 
 :::: {.columns}
-::: {.column width="60%"}
+::: {.column width="70%"}
 - **Unbiased representation learning**: The (hyper-)sphere has no preferred directions, so it does not bias the model towards any particular features or patterns in the data.
 - **Better interpolation**: The (hyper-)sphere allows for smooth interpolation between points in the latent space, which can lead to better reconstruction and generation of new data.
 :::
 
-::: {.column width="40%"}
-![](images/power_spherical.png){fig-align="center"}
-[[@DeCao2020]]{style="font-size: 50%;"}
+::: {.column width="30%"}
+![](images/power_spherical.png){style="margin-bottom: -40px;"}
+
+[@DeCao2020]{style="font-size: 50%;"}
 :::
 ::::
 

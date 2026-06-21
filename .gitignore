@@ -8,4 +8,4 @@ build/
 dist/
 index_files/
 index.quarto_ipynb_*
-speech.md
+speech.*
