@@ -24,7 +24,7 @@
 
 ## End-to-End ML Pipeline {auto-animate="true"}
 
-![](images/pipeline.png){fig-align="center"}
+![](images/ml_pipeline.png){fig-align="center"}
 
 
 ## ![](images/logos/pest.png){height="60px" style="vertical-align: middle;"} Data Acquisition {auto-animate="true"}
