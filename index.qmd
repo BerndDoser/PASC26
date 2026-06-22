@@ -197,6 +197,30 @@ ResNet-18 VAE-S$^{128}$: Details are present, but blurry
 [[@Fernique_2015]]{style="font-size: 50%;"} -->
 
 
+## Demo: Emoji {auto-animate="true"}
+
+:::: {.columns}
+::: {.column width="50%"}
+::: {style="text-align: center;"}
+[**Generated**]{.green-text}
+:::
+
+![](images/emoji_latent_vae_S2_generation.png){fig-align="center" style="width: 70%;"}
+:::
+::: {.column width="50%"}
+::: {style="text-align: center;"}
+[**Projected**]{.green-text}
+:::
+
+![](images/emoji_latent_vae_S2_data_projection.png){fig-align="center" style="width: 70%;"}
+:::
+::::
+
+::: {style="font-size: 70%; text-align: center; margin-top: -20px;"}
+VAE-S$^2$ with ResNet-18, [valhalla/emoji-dataset](https://huggingface.co/datasets/valhalla/emoji-dataset) (2,749 emojis)
+:::
+
+
 ## Demo: Celebrities {auto-animate="true"}
 
 :::: {.columns}
@@ -206,17 +230,17 @@ ResNet-18 VAE-S$^{128}$: Details are present, but blurry
 :::
 
 - [tonyassi/celebrity-1000](https://huggingface.co/datasets/tonyassi/celebrity-1000): 18,184 images of 1000 celebrities
-- Trained a VAE-S$^2$ with a ResNet-18
+- VAE-S$^2$ with ResNet-18
 <!-- - Combined Reconstruction Loss:
   - L1
   - Perceptual Loss (VGG-16 features) -->
 
 :::
 ::: {.column width="45%"}
-```{=html}
+<!-- ```{=html}
 <iframe width="600" height="600" src="https://space.h-its.org/celebrities/"></iframe>
-```
-<!-- <video src="../videos/celebrities.mp4" controls></video> -->
+``` -->
+<video src="../videos/celebrities.mp4" controls></video>
 :::
 ::::
 
