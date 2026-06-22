@@ -1,4 +1,4 @@
-## Agenda
+## Agenda {auto-animate="true"}
 
 - The Data Pipeline (PEST)
 - How to Learn the Representation? (Spherinator)
@@ -9,11 +9,11 @@
 ![](images/illustris_latent_sphere_quarter.png){.absolute top=-120 right=-120 width="500" height="500"}
 
 
-## Motivation
+## Motivation {auto-animate="true"}
 
 - The amount of astronomical data is growing exponentially
-  - Exascale cosmological simulations produce ***petabytes of data***
-  - Surveys (e.g. Euclid, LSST) are generating ***terabytes of data daily***
+  - Exascale cosmological simulations produce [***petabytes of data***]{.green-text}
+  - Surveys (e.g. Euclid, LSST) are generating [***terabytes of data daily***]{.green-text}
 
 - Machine learning methods are needed to explore this amount of data
 
@@ -40,7 +40,7 @@
 
 
 
-## ![](images/logos/spherinator.png){height="60px" style="vertical-align: middle;"} Representation Learning
+## ![](images/logos/spherinator.png){height="60px" style="vertical-align: middle;"} Representation Learning {auto-animate="true"}
 
 - Representation learning using a **Variational Autoencoder**
 
@@ -69,7 +69,7 @@
 ::::
 
 
-## How many dimensions?
+## How many dimensions? {auto-animate="true"}
 
 ::: {style="font-size: 70%;"}
 **PCA analysis** of the bottleneck feature space: eigenvalue decay reveals the intrinsic dimensionality of the data.
@@ -78,7 +78,7 @@
 ![](images/PCA_feature_analysis.png){width="700" fig-align="center"}
 
 
-## How many dimensions?
+## How many dimensions? {auto-animate="true"}
 
 ::: {style="font-size: 70%;"}
 Determine the optimal number of dimensions in the latent space by analyzing the reconstruction.
@@ -127,8 +127,9 @@ fig.show(config={"displayModeBar": False})
 ```
 
 
-## Reconstruction Quality {auto-animate="true" style="font-size: 50%;"}
+## Reconstruction Quality {auto-animate="true"}
 
+::: {style="font-size: 70%;"}
 Original IllustrisTNG SKIRT SDSS images
 
 ![](images/illustris_original.png){width="1000" fig-align="center"}
@@ -136,10 +137,12 @@ Original IllustrisTNG SKIRT SDSS images
 ResNet-18 autoencoder, 512 features: Sufficient reconstruction
 
 ![](images/illustris_recon_ae_512.png){width="1000" fig-align="center"}
+:::
 
 
-## Reconstruction Quality {auto-animate="true" style="font-size: 50%;"}
+## Reconstruction Quality {auto-animate="true"}
 
+::: {style="font-size: 70%;"}
 Original IllustrisTNG SKIRT SDSS images
 
 ![](images/illustris_original.png){width="1000" fig-align="center"}
@@ -151,10 +154,10 @@ ResNet-18 VAE-S${^2}$: Details are lost, but the overall structure is preserved
 ResNet-18 VAE-S$^{128}$: Details are present, but blurry
 
 ![](images/illustris_recon_vae_S128.png){width="1000" fig-align="center"}
+:::
 
 
-
-## UMAP vs. Spherinator
+## UMAP vs. Spherinator {auto-animate="true"}
 
 :::: {.columns}
 ::: {.column width="55%"}
@@ -168,7 +171,7 @@ ResNet-18 VAE-S$^{128}$: Details are present, but blurry
 ::::
 
 
-## ![](images/logos/hipster.png){height="60px" style="vertical-align: middle;"} HiPSter
+## ![](images/logos/hipster.png){height="60px" style="vertical-align: middle;"} HiPSter {auto-animate="true"}
 
 :::: {.columns}
 ::: {.column width="55%"}
@@ -194,7 +197,7 @@ ResNet-18 VAE-S$^{128}$: Details are present, but blurry
 [[@Fernique_2015]]{style="font-size: 50%;"} -->
 
 
-## Demo: Celebrities
+## Demo: Celebrities {auto-animate="true"}
 
 :::: {.columns}
 ::: {.column width="55%"}
@@ -263,7 +266,7 @@ ResNet-18 VAE-S$^{128}$: Details are present, but blurry
 ![](images/flyte-architecture.svg){fig-align="center" width="900"} -->
 
 
-## Outlook: Shared Universe Engine
+## Outlook: Shared Universe Engine {auto-animate="true"}
 
 ::: {layout='[1,1]'}
 ::: n1
@@ -280,7 +283,7 @@ ResNet-18 VAE-S$^{128}$: Details are present, but blurry
 ::::
 
 
-## Summary
+## Summary {auto-animate="true"}
 
 - **PEST**: ETL pipeline for cosmological simulations and observations
 - **Spherinator**: Self-supervised VAE with (hyper-)spherical latent space for unbiased representation learning
@@ -292,12 +295,12 @@ ResNet-18 VAE-S$^{128}$: Details are present, but blurry
 :::
 
 
-## Thank you for your attention!
+## Thank you for your attention! {auto-animate="true"}
 
 ![](images/FIFA-trophy.png){fig-align="center"}
 
 
-## Acknowledgement & Disclaimer
+## Acknowledgement & Disclaimer {auto-animate="true"}
 
 ![](images/Space-partners-new.png){fig-align="center"}
 
@@ -310,7 +313,7 @@ Views and opinions expressed are however those of the author(s) only and do not 
 ![](images/SPACE_JULogos.png){fig-align="center" width="400"}
 
 
-## Associated Materials
+## Associated Materials {auto-animate="true"}
 
 <!-- ![](images/qrcode_github_repo.svg){.absolute top=50 right=0 width=200} -->
 
@@ -322,4 +325,4 @@ Views and opinions expressed are however those of the author(s) only and do not 
 - Tutorials: [SPACE HPC Visualization Workshop](https://github.com/BerndDoser/SPACE_HPC_Visualization_Workshop)
 
 
-## References
+## References {auto-animate="true"}

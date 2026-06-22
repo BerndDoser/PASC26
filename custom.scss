@@ -19,6 +19,7 @@ $body-bg: #003063 !default; // HITS dark blue
 $link-color: #0088c2 !default; // HITS cyan 100%
 $selection-bg: #134674 !default;
 
+$green-text: #07B875;
 
 $overlayElementBgColor: 0, 0, 0 !default;
 $overlayElementFgColor: 240, 240, 240 !default;
@@ -56,4 +57,8 @@ $code-block-bg: transparent !default;
   left: unset !important;
   top: unset !important;
   background: transparent !important;
+}
+
+.reveal .green-text {
+    color: $green-text;
 }
