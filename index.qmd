@@ -42,15 +42,15 @@
 
 ## ![](images/logos/spherinator.png){height="60px" style="vertical-align: middle;"} Representation Learning {auto-animate="true"}
 
-- Representation learning using a **Variational Autoencoder**
+- Representation learning using a [***Variational Autoencoder***]{.green-text}
 
-![](images/vae-sphere.svg){width="900" fig-align="center" margin-bottom="-40px;"}
+![](images/vae-sphere.svg){fig-align="center" style="width: 700px; margin-bottom: -40px;"}
 
 [@Polsterer2024; @Doser2026]{style="font-size: 50%;"}
 
-- Dimensionality reduction to a **(Hyper-)Spherical Latent Space**
-- Completely **self-supervised** - no labels required
-- Export to [ONNX](https://onnx.ai/) for ***interoperability*** with other ML frameworks and deployment platforms
+- Dimensionality reduction to a [***(Hyper-)Spherical Latent Space***]{.green-text}
+- Completely [***self-supervised***]{.green-text} - no labels required
+- Export to [ONNX](https://onnx.ai/) for [***interoperability***]{.green-text} with other framworks
 
 
 ## Why a (Hyper-)Sperical Latent Space? {auto-animate="true"}
