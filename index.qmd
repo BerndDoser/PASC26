@@ -1,30 +1,25 @@
 ## Agenda {auto-animate="true"}
 
-- The Data Pipeline (PEST)
-- How to Learn the Representation? (Spherinator)
+- The Data Pipeline
+- How to Learn the Representation?
 - The (Hyper-)Spherical Latent Space
-- Interactive Visualization (HiPSter)
-- The Shared Universe Engine (DynaVerse SUE)
+- Interactive Visualization
+- The Shared Universe Engine
 
 ![](images/illustris_latent_sphere_quarter.png){.absolute top=-120 right=-120 width="500" height="500"}
 
 
 ## Motivation {auto-animate="true"}
 
-- The amount of astronomical data is growing exponentially
+- The amount of astronomical data is [***growing exponentially***]{.green-text}
   - Exascale cosmological simulations produce [***petabytes of data***]{.green-text}
-  - Surveys (e.g. Euclid, LSST) are generating [***terabytes of data daily***]{.green-text}
+  - Surveys (e.g. Euclid, Rubin) are generating [***terabytes of data daily***]{.green-text}
 
 - Machine learning methods are needed to explore this amount of data
 
 - **Our approach:** Modular open-source tools for self-supervised knowledge discovery and interactive visualization of large-scale cosmological data
 
   <!-- [PEST](https://github.com/HITS-AIN/PEST) $\rightarrow$ [Spherinator](https://github.com/HITS-AIN/Spherinator) $\rightarrow$ [HiPSter](https://github.com/HITS-AIN/HiPSter) $\rightarrow$ Shared Universe Engine -->
-
-
-## End-to-End ML Pipeline {auto-animate="true"}
-
-![](images/ml_pipeline.png){fig-align="center"}
 
 
 ## ![](images/logos/pest.png){height="60px" style="vertical-align: middle;"} Data Acquisition {auto-animate="true"}
@@ -50,32 +45,34 @@
 
 - Dimensionality reduction to a [***(Hyper-)Spherical Latent Space***]{.green-text}
 - Completely [***self-supervised***]{.green-text} - no labels required
-- Export to [ONNX](https://onnx.ai/) for [***interoperability***]{.green-text} with other framworks
+- Export to [ONNX](https://onnx.ai/) for [***interoperability***]{.green-text} with other frameworks
 
 
-## Why a (Hyper-)Sperical Latent Space? {auto-animate="true"}
+## Why a (Hyper-)Spherical Latent Space? {auto-animate="true"}
 
 :::: {.columns}
-::: {.column width="70%"}
-- **Unbiased representation learning**: The (hyper-)sphere has no preferred directions, so it does not bias the model towards any particular features or patterns in the data.
-- **Better interpolation**: The (hyper-)sphere allows for smooth interpolation between points in the latent space, which can lead to better reconstruction and generation of new data.
+::: {.column width="50%"}
+- [***Unbiased representation learning***]{.green-text}: The (hyper-)sphere has no preferred directions
+<!-- , so it does not bias the model towards any particular features or patterns in the data. -->
+- [***Better interpolation***]{.green-text}: The (hyper-)sphere allows for smooth interpolation between points in the latent space
+<!-- , which can lead to better reconstruction and generation of new data. -->
 :::
 
-::: {.column width="30%"}
-![](images/power_spherical.png){style="margin-bottom: -40px;"}
+::: {.column width="50%"}
+![](images/power_spherical.png){style="width: 90%; margin-bottom: -40px;"}
 
 [@DeCao2020]{style="font-size: 50%;"}
 :::
 ::::
 
 
-## How many dimensions? {auto-animate="true"}
+<!-- ## How many dimensions? {auto-animate="true"}
 
 ::: {style="font-size: 70%;"}
 **PCA analysis** of the bottleneck feature space: eigenvalue decay reveals the intrinsic dimensionality of the data.
 :::
 
-![](images/PCA_feature_analysis.png){width="700" fig-align="center"}
+![](images/PCA_feature_analysis.png){width="700" fig-align="center"} -->
 
 
 ## How many dimensions? {auto-animate="true"}
@@ -137,6 +134,10 @@ Original IllustrisTNG SKIRT SDSS images
 ResNet-18 autoencoder, 512 features: Sufficient reconstruction
 
 ![](images/illustris_recon_ae_512.png){width="1000" fig-align="center"}
+
+ResNet-18 VAE-S$^{128}$: Details are present, but blurry
+
+![](images/illustris_recon_vae_S128.png){width="1000" fig-align="center"}
 :::
 
 
@@ -147,13 +148,13 @@ Original IllustrisTNG SKIRT SDSS images
 
 ![](images/illustris_original.png){width="1000" fig-align="center"}
 
-ResNet-18 VAE-S${^2}$: Details are lost, but the overall structure is preserved
-
-![](images/illustris_recon_vae_S2.png){width="1000" fig-align="center"}
-
 ResNet-18 VAE-S$^{128}$: Details are present, but blurry
 
 ![](images/illustris_recon_vae_S128.png){width="1000" fig-align="center"}
+
+ResNet-18 VAE-S${^2}$: Details are lost, but the overall structure is preserved
+
+![](images/illustris_recon_vae_S2.png){width="1000" fig-align="center"}
 :::
 
 
@@ -197,16 +198,17 @@ ResNet-18 VAE-S$^{128}$: Details are present, but blurry
 [[@Fernique_2015]]{style="font-size: 50%;"} -->
 
 
-## Demo: Emoji {auto-animate="true"}
+## End-to-End ML Pipeline {auto-animate="true"}
+
+![](images/ml_pipeline.png){fig-align="center"}
+
+- **PEST** processes the huge data amount [***on-site***]{.green-text} and uploads a standardised [Parquet](https://parquet.apache.org/) dataset
+- **Spherinator** learns a [***compact spherical representation***]{.green-text} and exports it via [ONNX](https://onnx.ai/)
+
+
+## VAE-S$^2$ with Emojis {auto-animate="true"}
 
 :::: {.columns}
-::: {.column width="50%"}
-::: {style="text-align: center;"}
-[**Generated**]{.green-text}
-:::
-
-![](images/emoji_latent_vae_S2_generation.png){fig-align="center" style="width: 70%;"}
-:::
 ::: {.column width="50%"}
 ::: {style="text-align: center;"}
 [**Projected**]{.green-text}
@@ -214,14 +216,21 @@ ResNet-18 VAE-S$^{128}$: Details are present, but blurry
 
 ![](images/emoji_latent_vae_S2_data_projection.png){fig-align="center" style="width: 70%;"}
 :::
+::: {.column width="50%"}
+::: {style="text-align: center;"}
+[**Generated**]{.green-text}
+:::
+
+![](images/emoji_latent_vae_S2_generation.png){fig-align="center" style="width: 70%;"}
+:::
 ::::
 
-::: {style="font-size: 70%; text-align: center; margin-top: -20px;"}
-VAE-S$^2$ with ResNet-18, [valhalla/emoji-dataset](https://huggingface.co/datasets/valhalla/emoji-dataset) (2,749 emojis)
+::: {style="font-size: 70%; text-align: center; margin-top: -40px;"}
+[valhalla/emoji-dataset](https://huggingface.co/datasets/valhalla/emoji-dataset) (2,749 emojis)
 :::
 
 
-## Demo: Celebrities {auto-animate="true"}
+## VAE-S$^2$ with Celebrities {auto-animate="true"}
 
 :::: {.columns}
 ::: {.column width="55%"}
@@ -230,10 +239,6 @@ VAE-S$^2$ with ResNet-18, [valhalla/emoji-dataset](https://huggingface.co/datase
 :::
 
 - [tonyassi/celebrity-1000](https://huggingface.co/datasets/tonyassi/celebrity-1000): 18,184 images of 1000 celebrities
-- VAE-S$^2$ with ResNet-18
-<!-- - Combined Reconstruction Loss:
-  - L1
-  - Perceptual Loss (VGG-16 features) -->
 
 :::
 ::: {.column width="45%"}
@@ -245,7 +250,7 @@ VAE-S$^2$ with ResNet-18, [valhalla/emoji-dataset](https://huggingface.co/datase
 ::::
 
 
-## Gaia Spectral Data {auto-animate="true"}
+<!-- ## Gaia Spectral Data {auto-animate="true"}
 
 ::: {layout='[1,1]'}
 ::: n1
@@ -262,10 +267,15 @@ VAE-S$^2$ with ResNet-18, [valhalla/emoji-dataset](https://huggingface.co/datase
 <iframe width="600" height="600" src="https://space.h-its.org/Gaia/"></iframe>
 ```
 :::
-:::
+::: -->
 
 
 ## Gaia Explorer {auto-animate="true"}
+
+::: {style="font-size: 80%;"}
+<!-- [Gaia DR3 XP](http://cdn.gea.esac.esa.int/Gaia/gdr3/): -->
+Largest most uniform all-sky spectrophotometric survey [***(over 220 million sources)***]{.green-text}
+:::
 
 ![](images/gaia_explorer.png){fig-align="center"}
 
@@ -307,21 +317,22 @@ VAE-S$^2$ with ResNet-18, [valhalla/emoji-dataset](https://huggingface.co/datase
 ::::
 
 
-## Summary {auto-animate="true"}
+<!-- ## Summary {auto-animate="true"}
 
 - **PEST**: ETL pipeline for cosmological simulations and observations
 - **Spherinator**: Self-supervised VAE with (hyper-)spherical latent space for unbiased representation learning
 - **HiPSter**: Scalable interactive visualization via progressive HiPS maps on the sphere
-- **DynaVerse SUE**: Unified platform connecting data, models, and simulations across scales and disciplines
+- **DynaVerse SUE**: Unified platform connecting data, models, and simulations across scales and disciplines -->
 
-::: {style="text-align: center; border: 2px solid #0088c2; border-radius: 12px; padding: 0.3em 0.8em; margin-top: 0.5em; margin-left: auto; margin-right: auto; width: 30%; background: linear-gradient(135deg, rgba(0,136,194,0.15), rgba(206,230,245,0.08)); box-shadow: 0 0 18px rgba(0,136,194,0.5); font-size: 1.1em; font-weight: bold; letter-spacing: 0.04em;"}
-[space.h-its.org](https://space.h-its.org)
-:::
 
 
 ## Thank you for your attention! {auto-animate="true"}
 
 ![](images/FIFA-trophy.png){fig-align="center"}
+
+::: {style="text-align: center; border: 2px solid #0088c2; border-radius: 12px; padding: 0.3em 0.8em; margin-top: 0.5em; margin-left: auto; margin-right: auto; width: 30%; background: linear-gradient(135deg, rgba(0,136,194,0.15), rgba(206,230,245,0.08)); box-shadow: 0 0 18px rgba(0,136,194,0.5); font-size: 1.1em; font-weight: bold; letter-spacing: 0.04em;"}
+[space.h-its.org](https://space.h-its.org)
+:::
 
 
 ## Acknowledgement & Disclaimer {auto-animate="true"}
