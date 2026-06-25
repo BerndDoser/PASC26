@@ -1,4 +1,4 @@
-## Agenda {auto-animate="true"}
+<!-- ## Agenda {auto-animate="true"}
 
 - The Data Pipeline
 - How to Learn the Representation?
@@ -6,7 +6,7 @@
 - Interactive Visualization
 - The Shared Universe Engine
 
-![](images/illustris_latent_sphere_quarter.png){.absolute top=-120 right=-120 width="500" height="500"}
+![](images/illustris_latent_sphere_quarter.png){.absolute top=-120 right=-120 width="500" height="500"} -->
 
 
 ## Motivation {auto-animate="true"}
@@ -39,7 +39,7 @@
 
 - Representation learning using a [***Variational Autoencoder***]{.green-text}
 
-![](images/vae-sphere.svg){fig-align="center" style="width: 700px; margin-bottom: -40px;"}
+![](images/vae-sphere-with-images.svg){fig-align="center" style="width: 700px; margin-bottom: -40px;"}
 
 [@Polsterer2024; @Doser2026]{style="font-size: 50%;"}
 
