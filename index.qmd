@@ -57,7 +57,7 @@
 :::
 
 ::: {.column width="50%"}
-![](images/power_spherical.png){style="width: 90%; margin-bottom: -40px;"}
+![](images/power_spherical.png){fig-align="center"style="width: 80%; margin-bottom: -40px;"}
 
 [@DeCao2020]{style="font-size: 50%;"}
 :::
@@ -125,16 +125,13 @@ fig.show(config={"displayModeBar": False})
 ## Reconstruction Quality {auto-animate="true"}
 
 ::: {style="font-size: 70%;"}
-Original IllustrisTNG SKIRT SDSS images
-
+Original IllustrisTNG SKIRT SDSS images\
 ![](images/illustris_original.png){width="1000" fig-align="center"}
 
-ResNet-18 autoencoder, 512 features: Sufficient reconstruction
-
+ResNet-18 autoencoder, 512 features: Sufficient reconstruction\
 ![](images/illustris_recon_ae_512.png){width="1000" fig-align="center"}
 
-ResNet-18 VAE-S$^{128}$: Details are present, but blurry
-
+ResNet-18 VAE-S$^{128}$: Details are present, but blurry\
 ![](images/illustris_recon_vae_S128.png){width="1000" fig-align="center"}
 :::
 
@@ -142,16 +139,13 @@ ResNet-18 VAE-S$^{128}$: Details are present, but blurry
 ## Reconstruction Quality {auto-animate="true"}
 
 ::: {style="font-size: 70%;"}
-Original IllustrisTNG SKIRT SDSS images
-
+Original IllustrisTNG SKIRT SDSS images\
 ![](images/illustris_original.png){width="1000" fig-align="center"}
 
-ResNet-18 VAE-S$^{128}$: Details are present, but blurry
-
+ResNet-18 VAE-S$^{128}$: Details are present, but blurry\
 ![](images/illustris_recon_vae_S128.png){width="1000" fig-align="center"}
 
-ResNet-18 VAE-S${^2}$: Details are lost, but the overall structure is preserved
-
+ResNet-18 VAE-S${^2}$: Details are lost, but the overall structure is preserved\
 ![](images/illustris_recon_vae_S2.png){width="1000" fig-align="center"}
 :::
 
@@ -160,12 +154,12 @@ ResNet-18 VAE-S${^2}$: Details are lost, but the overall structure is preserved
 
 :::: {.columns}
 ::: {.column width="55%"}
-![](images/illustris_umap.png){width="700" fig-align="center"}
+![](images/illustris_umap.png){fig-align="center"style="width: 80%;"}
 :::
 
 ::: {.column width="45%"}
-- UMAP is a popular dimensionality reduction technique, but it can distort the global structure of the data.
-- Spherinator preserves the global geometry of the data on a hypersphere, leading to more meaningful representations.
+- [***UMAP***]{.green-text} is a popular dimensionality reduction technique, but it can distort the global structure of the data.
+- [***Spherinator***]{.green-text} preserves the global geometry of the data on a hypersphere, leading to more meaningful representations.
 :::
 ::::
 
@@ -174,26 +168,19 @@ ResNet-18 VAE-S${^2}$: Details are lost, but the overall structure is preserved
 
 :::: {.columns}
 ::: {.column width="55%"}
-- Takes the **spherical latent positions** from Spherinator
-- Generates a **HiPS** (**Hi**erarchical **P**rogressive **S**urvey) map
-- Enables **progressive zoom** - more detail as you zoom in
+- Takes the [***spherical latent positions***]{.green-text} from Spherinator
+- Generates a [***HiPS***]{.green-text} ([***Hi***]{.green-text}erarchical [***P***]{.green-text}rogressive [***S***]{.green-text}urvey) map
+- Enables [***progressive zoom***]{.green-text} - more detail as you zoom in
 - Works with any standard HiPS viewer (e.g. [Aladin-Lite](https://github.com/cds-astro/aladin-lite))
-
 :::
 ::: {.column width="45%"}
-![](images/P404_f2.png){width="480" fig-align="center"}
+::: {style="text-align: center;"}
+![](images/P404_f2.png){width="50%"}
+![](images/HEALPix.png){width="80%" style="margin-bottom: -20px;"}\
+[@Fernique_2015]{style="font-size: 50%;"}
+:::
 :::
 ::::
-
-
-<!-- ## HiPSter: The Inference
-
-![](images/HEALPix.png){width="800" fig-align="center"}
-
-- The **HEALPix framework** is used to generate a **Hierarchical Progressive Survey (HiPS)** for the corresponding spherical latent space positions.
-- [Aladin-Lite](https://github.com/cds-astro/aladin-lite) is designed to visualize the HiPS representation.
-
-[[@Fernique_2015]]{style="font-size: 50%;"} -->
 
 
 ## End-to-End ML Pipeline {auto-animate="true"}
