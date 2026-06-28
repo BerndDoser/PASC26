@@ -76,12 +76,13 @@
 ## How many dimensions? {auto-animate="true"}
 
 ::: {style="font-size: 70%;"}
-Determine the optimal number of dimensions in the latent space by analyzing the reconstruction.
+Optimal latent space dimensionality selected by reconstruction quality.
 :::
 
 
 ```{python}
 #| fig-align: center
+#| out-width: 100%
 import pandas as pd
 import plotly.graph_objects as go
 
@@ -116,6 +117,7 @@ fig.update_layout(
     yaxis=dict(gridcolor="rgba(206,230,245,0.2)", linecolor="rgba(206,230,245,0.4)"),
     legend=dict(bgcolor="rgba(0,0,0,0)"),
     margin=dict(l=60, r=20, t=20, b=60),
+    autosize=True,
 )
 
 fig.show(config={"displayModeBar": False})
