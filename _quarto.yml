@@ -25,6 +25,8 @@ format:
     theme: [default, custom.scss]
     auto-animate: true
 
+    auto-play-media: true
+
     include-after-body: clean_title_page.html
     include-after: |
       <script type="text/javascript">
