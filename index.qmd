@@ -217,44 +217,52 @@ ResNet-18 VAE-S${^2}$: Details are lost, but the overall structure is preserved\
 :::
 
 
-## VAE-S$^2$ with Celebrities {auto-animate="true"}
+## VAE-S$^2$ with Emojis {auto-animate="true"}
 
 :::: {.columns}
-::: {.column width="55%"}
-::: {style="text-align: center; border: 1px solid #cee6f5; border-radius: 8px; padding: 0.5em 1em; margin-bottom: 0.75em; font-style: italic;"}
-"Fill the sky with stars"
+::: {.column width="50%"}
+::: {style="text-align: center;"}
+[**Projected**]{.green-text}
 :::
 
-- [tonyassi/celebrity-1000](https://huggingface.co/datasets/tonyassi/celebrity-1000): 18,184 images of 1000 celebrities
-
+![](images/emoji_latent_vae_S2_data_projection.png){fig-align="center" style="width: 70%;"}
 :::
-::: {.column width="45%"}
-<!-- ```{=html}
-<iframe width="600" height="600" src="https://space.h-its.org/celebrities/"></iframe>
-``` -->
-<video src="../videos/celebrities.mp4" controls></video>
+::: {.column width="50%"}
+::: {style="text-align: center;"}
+[**Projected (zoomed)**]{.green-text}
+:::
+
+![](images/emoji_latent_vae_S2_data_projection_zoom.png){fig-align="center" style="width: 55%;"}
 :::
 ::::
 
-
-<!-- ## Gaia Spectral Data {auto-animate="true"}
-
-::: {layout='[1,1]'}
-::: n1
-::: {style="font-size: 80%;"}
-- [Gaia DR3 XP](http://cdn.gea.esac.esa.int/Gaia/gdr3/): Largest most uniform all-sky spectrophotometric survey (over 220 million sources)
-- Low-resolution spectra reveal temperature and chemical composition
-
-![](images/calibrated_spectrum_plot.png){fig-align="center"}
-:::
+::: {style="font-size: 70%; text-align: center; margin-top: -40px;"}
+[valhalla/emoji-dataset](https://huggingface.co/datasets/valhalla/emoji-dataset) (2,749 emojis)
 :::
 
-::: n2
-```{=html}
-<iframe width="600" height="600" src="https://space.h-its.org/Gaia/"></iframe>
-```
+
+## VAE-S$^2$ with Celebrities ["Fill the sky with stars"]{style="font-size: 70%;"} {auto-animate="true"}
+
+:::: {.columns}
+::: {.column width="50%"}
+::: {style="text-align: center;"}
+[**Projected**]{.green-text}
 :::
-::: -->
+
+![](images/celebrities_latent_vae_S2_data_projection.png){fig-align="center" style="width: 70%;"}
+:::
+::: {.column width="50%"}
+::: {style="text-align: center;"}
+[**Generated**]{.green-text}
+:::
+
+![](images/celebrities_latent_vae_S2_generation.png){fig-align="center" style="width: 70%;"}
+:::
+::::
+
+::: {style="font-size: 70%; text-align: center; margin-top: -40px;"}
+[tonyassi/celebrity-1000](https://huggingface.co/datasets/tonyassi/celebrity-1000) (18,184 images of 1000 celebrities)
+:::
 
 
 ## Gaia Explorer {auto-animate="true"}
@@ -326,8 +334,7 @@ Largest most uniform all-sky spectrophotometric survey [***(over 220 million sou
 ![](images/FIFA-trophy.png){fig-align="center" style="width: 30%"}
 :::
 ::: {.column width="50%" style="text-align: center;"}
-![](images/qrcode_space.h-its.org.png){fig-align="center" style="width: 60%"}
-
+![](images/qrcode_space.h-its.org.png){fig-align="center" style="width: 60%"}\
 [space.h-its.org](https://space.h-its.org)
 :::
 ::::
