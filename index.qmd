@@ -2,11 +2,11 @@
 
 - The amount of astronomical data is [***growing exponentially***]{.green-text}
   - Exascale cosmological simulations produce [***petabytes of data***]{.green-text}
-  - Surveys (e.g. Euclid, Rubin) are generating [***terabytes of data daily***]{.green-text}
+  - Surveys (e.g. Euclid, Rubin) generate [***terabytes of data daily***]{.green-text}
 
-- Machine learning methods are needed to explore this amount of data
+- Machine learning methods are needed to explore this amount of data and to extract knowledge
 
-- [**Our approach**]{.green-text} Modular open-source tools for self-supervised knowledge discovery and interactive visualization of large-scale cosmological data
+- [**Our goal:**]{.green-text} To develop modular open-source tools for self-supervised knowledge discovery and interactive visualization of large-scale cosmological data
 
 
 <!-- ## Agenda {auto-animate="true"}
@@ -24,10 +24,10 @@
 
 - [PEST](https://github.com/HITS-AIN/PEST) preprocesses universal cosmological simulation data into multi-channel images, data cubes, and point clouds
 
-- ETL pipeline (Extract $\rightarrow$ Transform $\rightarrow$ Load) driven by YAML
+- ETL (Extract $\rightarrow$ Transform $\rightarrow$ Load) pipeline driven by YAML
 <!-- - FAIR data management principles -->
 
-- [Apache Parquet](https://parquet.apache.org/) stores multi-modal data in an efficient columnar data storage
+- [Apache Parquet](https://parquet.apache.org/) stores efficiently multi-modal data in a columnar data storage
 
 - Upload to [Hugging Face](https://huggingface.co/) or [Zenodo](https://zenodo.org/) for easy sharing and integration with ML frameworks
 
@@ -35,13 +35,13 @@
 
 ## ![](images/logos/spherinator.png){height="60px" style="vertical-align: middle;"} Representation Learning {auto-animate="true"}
 
-- Representation learning using a [***Variational Autoencoder***]{.green-text}
+- Representation learning using a [***aariational autoencoder***]{.green-text}
 
 ![](images/vae-sphere-with-images.svg){fig-align="center" style="width: 700px; margin-bottom: -40px;"}
 
 [@Polsterer2024; @Doser2026]{style="font-size: 50%;"}
 
-- Dimensionality reduction to a [***(Hyper-)Spherical Latent Space***]{.green-text}
+- Dimensionality reduction to a [***(hyper-)spherical latent space***]{.green-text}
 - Completely [***self-supervised***]{.green-text} - no labels required
 - Export to [ONNX](https://onnx.ai/) for [***interoperability***]{.green-text} with other frameworks
 
@@ -158,8 +158,8 @@ ResNet-18 VAE-S${^2}$: Details are lost, but the overall structure is preserved\
 :::
 
 ::: {.column width="45%"}
-- [***UMAP***]{.green-text} is a popular dimensionality reduction technique, but it can distort the global structure of the data.
-- [***Spherinator***]{.green-text} preserves the global geometry of the data on a hypersphere, leading to more meaningful representations.
+- [***UMAP***]{.green-text} is a popular dimensionality reduction technique, but it typically distorts the global data structure by using a 2D projection
+- [***Spherinator***]{.green-text} preserves the global data structure by using a sphere, leading to more meaningful representations
 :::
 ::::
 
