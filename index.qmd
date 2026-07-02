@@ -276,7 +276,7 @@ Largest most uniform all-sky spectrophotometric survey [***(over 220 million sou
 ```{=html}
 <video autoplay loop muted playsinline
  width="90%"
- src="../videos/gaia_explorer.mp4">
+ src="videos/gaia_explorer.mp4">
 </video>
 ```
 
