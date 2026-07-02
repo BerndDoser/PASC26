@@ -35,7 +35,7 @@
 
 ## ![](images/logos/spherinator.png){height="60px" style="vertical-align: middle;"} Representation Learning {auto-animate="true"}
 
-- Representation learning using a [***aariational autoencoder***]{.green-text}
+- Representation learning using a [***variational autoencoder***]{.green-text}
 
 ![](images/vae-sphere-with-images.svg){fig-align="center" style="width: 700px; margin-bottom: -40px;"}
 
