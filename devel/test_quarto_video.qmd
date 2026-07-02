@@ -1,8 +1,0 @@
----
-title: "Document with Video Link"
-format: pdf
----
-
-Click the image below to watch the video documentation:
-
-[![Watch the video](../images/L1_Sdim.png){width=80%}](https://www.youtube.com/watch?v=wo9vZccmqwc)
