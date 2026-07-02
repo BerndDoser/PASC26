@@ -8,6 +8,9 @@ institute: Heidelberg Institute for Theoretical Studies (HITS)
 execute:
   python: ".venv/bin/python"
 
+resources:
+  - videos/
+
 format:
   revealjs:
     logo: images/HITS-Logo-negativ.png
